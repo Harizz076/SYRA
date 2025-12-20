@@ -1,0 +1,717 @@
+---------------------------- PROCESS STARTED (9313) for package com.wboelens.polarrecorder ----------------------------
+2025-11-17 07:35:37.643  9313-9313  nativeloader            com.wboelens.polarrecorder           D  Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+2025-11-17 07:35:37.659  9313-9313  nativeloader            com.wboelens.polarrecorder           D  Load /data/user/0/com.wboelens.polarrecorder/code_cache/startup_agents/65318d08-agent.so using system ns (caller=<unknown>): ok
+2025-11-17 07:35:37.664  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  hiddenapi: DexFile /data/data/com.wboelens.polarrecorder/code_cache/.studio/instruments-873176f2.jar is in boot class path but is not in a known location
+2025-11-17 07:35:37.772  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
+2025-11-17 07:35:37.772  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
+2025-11-17 07:35:37.785  9313-9313  ApplicationLoaders      com.wboelens.polarrecorder           D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+2025-11-17 07:35:37.785  9313-9313  ApplicationLoaders      com.wboelens.polarrecorder           D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+2025-11-17 07:35:38.183  9313-9313  nativeloader            com.wboelens.polarrecorder           D  Configuring clns-9 for other apk /data/app/~~-N1N2xVhPnsg7yKIei4oOg==/com.wboelens.polarrecorder-f7e8RmHLmlqk1OBDCY433g==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~-N1N2xVhPnsg7yKIei4oOg==/com.wboelens.polarrecorder-f7e8RmHLmlqk1OBDCY433g==/lib/arm64:/data/app/~~-N1N2xVhPnsg7yKIei4oOg==/com.wboelens.polarrecorder-f7e8RmHLmlqk1OBDCY433g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.wboelens.polarrecorder
+2025-11-17 07:35:38.185  9313-9313  CompatChangeReporter    com.wboelens.polarrecorder           D  Compat change id reported: 202956589; UID 10442; state: ENABLED
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V  Currently set values for:
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V    angle_gl_driver_selection_pkgs=[com.android.angle, com.google.android.apps.tachyon]
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V    angle_gl_driver_selection_values=[angle, native]
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V  com.wboelens.polarrecorder is not listed in per-application setting
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V  ANGLE allowlist from config:
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V  com.wboelens.polarrecorder is not listed in ANGLE allowlist or settings, returning default
+2025-11-17 07:35:38.190  9313-9313  GraphicsEnvironment     com.wboelens.polarrecorder           V  Neither updatable production driver nor prerelease driver is supported.
+2025-11-17 07:35:38.204  9313-9313  CompatChangeReporter    com.wboelens.polarrecorder           D  Compat change id reported: 279646685; UID 10442; state: ENABLED
+2025-11-17 07:35:38.207  9313-9313  PolarRecorderApp        com.wboelens.polarrecorder           D  Application onCreate - initializing shared managers
+2025-11-17 07:35:38.230  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  File system recording enabled at: content://com.android.externalstorage.documents/tree/primary%3Apolar/document/primary%3Apolar
+2025-11-17 07:35:38.230  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify tracking enabled
+2025-11-17 07:35:38.267  9313-9313  PolarManager            com.wboelens.polarrecorder           D  BLE power: true
+2025-11-17 07:35:38.268  9313-9313  PolarRecorderApp        com.wboelens.polarrecorder           D  Shared managers initialized successfully
+2025-11-17 07:35:38.277  9313-9373  DisplayManager          com.wboelens.polarrecorder           I  Choreographer implicitly registered for the refresh rate.
+2025-11-17 07:35:38.278  9313-9373  vulkan                  com.wboelens.polarrecorder           D  searching for layers in '/data/app/~~-N1N2xVhPnsg7yKIei4oOg==/com.wboelens.polarrecorder-f7e8RmHLmlqk1OBDCY433g==/lib/arm64'
+2025-11-17 07:35:38.278  9313-9373  vulkan                  com.wboelens.polarrecorder           D  searching for layers in '/data/app/~~-N1N2xVhPnsg7yKIei4oOg==/com.wboelens.polarrecorder-f7e8RmHLmlqk1OBDCY433g==/base.apk!/lib/arm64-v8a'
+2025-11-17 07:35:38.299  9313-9313  ashmem                  com.wboelens.polarrecorder           E  Pinning is deprecated since Android Q. Please use trim or other methods.
+2025-11-17 07:35:38.303  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onCreate: Initializing MainActivity
+2025-11-17 07:35:38.314  9313-9313  CompatChangeReporter    com.wboelens.polarrecorder           D  Compat change id reported: 309578419; UID 10442; state: ENABLED
+2025-11-17 07:35:38.315  9313-9313  DesktopExperienceFlags  com.wboelens.polarrecorder           D  Toggle override initialized to: false
+2025-11-17 07:35:38.315  9313-9313  DesktopModeFlags        com.wboelens.polarrecorder           D  Toggle override initialized to: OVERRIDE_UNSET
+2025-11-17 07:35:38.323  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ========== onStart CALLED ==========
+2025-11-17 07:35:38.323  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStart - Activity started
+2025-11-17 07:35:38.323  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStart - spotifyAppRemote: NULL
+2025-11-17 07:35:38.323  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStart - isConnectingToSpotify: false
+2025-11-17 07:35:38.323  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStart - Conditions met, calling connectToSpotify()
+2025-11-17 07:35:38.323  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ========== connectToSpotify CALLED ==========
+2025-11-17 07:35:38.324  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ✓ Spotify app is installed
+2025-11-17 07:35:38.324  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Setting isConnectingToSpotify = true
+2025-11-17 07:35:38.324  9313-9313  PolarManager            com.wboelens.polarrecorder           D  showAuthView = false (spotifyAuthorized = true)
+2025-11-17 07:35:38.325  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Calling SpotifyAppRemote.connect() with showAuthView=false...
+2025-11-17 07:35:38.332  9313-9313  PolarManager            com.wboelens.polarrecorder           D  =============================================
+2025-11-17 07:35:38.332  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ====================================
+2025-11-17 07:35:38.333  9313-9313  ContentCaptureHelper    com.wboelens.polarrecorder           I  Setting logging level to OFF
+2025-11-17 07:35:38.342  9313-9313  CompatChangeReporter    com.wboelens.polarrecorder           D  Compat change id reported: 352594277; UID 10442; state: ENABLED
+2025-11-17 07:35:38.348  9313-9313  CompatChangeReporter    com.wboelens.polarrecorder           D  Compat change id reported: 349153669; UID 10442; state: ENABLED
+2025-11-17 07:35:38.357  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Service created
+2025-11-17 07:35:38.366  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Service started
+2025-11-17 07:35:38.368  9313-9313  SurveyNoti...ionService com.wboelens.polarrecorder           D  Service created
+2025-11-17 07:35:38.376  9313-9313  SurveyNoti...ionService com.wboelens.polarrecorder           D  Service started
+2025-11-17 07:35:38.377  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@cc66696
+2025-11-17 07:35:38.631  9313-9329  s.polarrecorder         com.wboelens.polarrecorder           I  Compiler allocated 4970KB to compile void android.view.ViewRootImpl.performTraversals()
+2025-11-17 07:35:38.638  9313-9313  HWUI                    com.wboelens.polarrecorder           I  Using FreeType backend (prop=Auto)
+2025-11-17 07:35:38.645  2221-2221  StackScroll             com.android.systemui                 E  Heads up view appearing 0|com.wboelens.polarrecorder|2001|null|10442 for ANIMATION_TYPE_ADD
+2025-11-17 07:35:38.749  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 27
+2025-11-17 07:35:38.750  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.750  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.751  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Necessary permissions for scanning granted
+2025-11-17 07:35:38.753  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.754  9313-9407  PolarManager            com.wboelens.polarrecorder           D  Starting scan
+2025-11-17 07:35:38.754  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.755  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.756  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.756  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.757  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.757  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 27
+2025-11-17 07:35:38.758  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.758  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.758  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.759  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.760  9313-9313  Choreographer           com.wboelens.polarrecorder           I  Skipped 44 frames!  The application may be doing too much work on its main thread.
+2025-11-17 07:35:38.760  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.761  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.762  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.762  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.763  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.764  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.764  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.764  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.765  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.765  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.766  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.766  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.767  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.767  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.767  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.768  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.769  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.770  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.771  9313-9407  BluetoothAdapter        com.wboelens.polarrecorder           D  isLeEnabled(): ON
+2025-11-17 07:35:38.772  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.772  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.773  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.773  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.774  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 27
+2025-11-17 07:35:38.774  9313-9337  BluetoothLeScanner      com.wboelens.polarrecorder           D  onScannerRegistered() - status=0 scannerId=4 mScannerId=0
+2025-11-17 07:35:38.774  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.775  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.776  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.777  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.779  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.779  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.780  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.781  9313-9380  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.817  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 27
+2025-11-17 07:35:38.817  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.820  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.820  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.820  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.821  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.821  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.822  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.822  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.822  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 27
+2025-11-17 07:35:38.823  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.823  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.823  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.824  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.824  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.824  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.824  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.825  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.825  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.825  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.825  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.825  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.825  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.827  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.828  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.829  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.830  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.830  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.830  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.830  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.830  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.831  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.831  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.831  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:38.832  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.832  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:38.832  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 27
+2025-11-17 07:35:38.832  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.832  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.833  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.833  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.833  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.833  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.833  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.833  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:38.846  9313-9313  CompatChangeReporter    com.wboelens.polarrecorder           D  Compat change id reported: 270674727; UID 10442; state: ENABLED
+2025-11-17 07:35:39.113  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 27
+2025-11-17 07:35:39.114  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:35:39.114  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:35:39.180  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 27
+2025-11-17 07:35:39.181  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:35:39.181  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:35:39.326  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 27
+2025-11-17 07:35:39.326  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.326  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.326  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.326  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.327  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.327  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.327  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ========== onConnected CALLBACK ==========
+2025-11-17 07:35:39.327  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ✓ Connected to Spotify!
+2025-11-17 07:35:39.327  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Setting isConnectingToSpotify = false
+2025-11-17 07:35:39.327  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Setting spotifyAuthorized = true
+2025-11-17 07:35:39.327  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Connected to Spotify!
+2025-11-17 07:35:39.327  9313-9313  PolarManager            com.wboelens.polarrecorder           D  connected: Spotify connected
+2025-11-17 07:35:39.327  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Subscribed to Spotify player state
+2025-11-17 07:35:39.327  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ==========================================
+2025-11-17 07:35:39.357  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 27
+2025-11-17 07:35:39.357  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.358  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.358  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.358  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.358  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.358  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:39.358  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Connected to Spotify App Remote
+2025-11-17 07:35:39.361  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 27
+2025-11-17 07:35:39.362  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.362  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.362  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.362  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.362  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 27
+2025-11-17 07:35:39.362  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.363  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 27
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.364  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.365  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.366  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.366  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.366  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.366  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 27
+2025-11-17 07:35:39.366  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.366  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.367  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 27
+2025-11-17 07:35:39.367  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.367  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.367  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.367  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.367  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 27
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.368  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.369  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.369  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.369  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.369  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.369  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.370  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.371  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.371  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Track: Back In Black by AC/DC, isPaused: true, position: 4194, trackId: spotify:track:08mG3Y1vljYA6bvDt4Wqkj
+2025-11-17 07:35:39.371  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify: Back In Black by AC/DC - Paused
+2025-11-17 07:35:39.376  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 27
+2025-11-17 07:35:39.376  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.377  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.378  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.378  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.378  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 27
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.379  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.380  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.380  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 27
+2025-11-17 07:35:39.380  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.380  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.380  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.380  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.381  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:39.382  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.382  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.382  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.382  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:39.382  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 27
+2025-11-17 07:35:39.382  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.383  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.383  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 27
+2025-11-17 07:35:39.383  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.383  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.383  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.383  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 27
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.384  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:39.385  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.386  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.387  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.387  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.387  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.388  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.389  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.389  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:39.389  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: true, track: Back In Black
+2025-11-17 07:35:39.876  9313-9313  BluetoothAdapter        com.wboelens.polarrecorder           D  isLeEnabled(): ON
+2025-11-17 07:35:39.901  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@1e7da9c
+2025-11-17 07:35:39.991  9313-9313  BluetoothGatt           com.wboelens.polarrecorder           D  connect() - device: XX:XX:XX:XX:86:AA, auto: false
+2025-11-17 07:35:39.991  9313-9313  BluetoothGatt           com.wboelens.polarrecorder           D  registerApp()
+2025-11-17 07:35:39.991  9313-9313  BluetoothGatt           com.wboelens.polarrecorder           D  registerApp() - UUID=41c9e8c4-72fa-40aa-bf7b-03da9692bb49
+2025-11-17 07:35:39.993  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  onClientRegistered(0)
+2025-11-17 07:35:40.005  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Connecting to device DE86AA21
+2025-11-17 07:35:40.087  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  onClientConnectionState() - status=0 connected=true device=XX:XX:XX:XX:86:AA
+2025-11-17 07:35:40.361  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  onConnectionUpdated() - device=XX:XX:XX:XX:86:AA interval=40 latency=0 timeout=500 status=0
+2025-11-17 07:35:40.589  9313-9410  BluetoothGatt           com.wboelens.polarrecorder           D  discoverServices() - device: XX:XX:XX:XX:86:AA
+2025-11-17 07:35:40.595  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  onSearchComplete(XX:XX:XX:XX:86:AA, _, 0)
+2025-11-17 07:35:41.763  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  onPhyUpdate() - status=0 device=XX:XX:XX:XX:86:AA txPhy=2 rxPhy=2
+2025-11-17 07:35:41.764  9313-9410  BluetoothGatt           com.wboelens.polarrecorder           D  configureMTU() - device: XX:XX:XX:XX:86:AA mtu: 512
+2025-11-17 07:35:41.845  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  switch root view (mImeCallbacks.size=0)
+2025-11-17 07:35:41.848  9313-9313  InsetsController        com.wboelens.polarrecorder           D  hide(ime())
+2025-11-17 07:35:41.848  9313-9313  ImeTracker              com.wboelens.polarrecorder           I  com.wboelens.polarrecorder:54ed91c0: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2025-11-17 07:35:41.862  9313-9335  BluetoothGatt           com.wboelens.polarrecorder           D  onConfigureMTU(XX:XX:XX:XX:86:AA, 232, 0)
+2025-11-17 07:35:41.863  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Fetching capabilities for device DE86AA21
+2025-11-17 07:35:41.867  9313-9410  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_HR ready for device DE86AA21
+2025-11-17 07:35:41.867  9313-9410  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_DEVICE_INFO ready for device DE86AA21
+2025-11-17 07:35:41.867  9313-9410  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_BATTERY_INFO ready for device DE86AA21
+2025-11-17 07:35:41.886  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_HR ready for device DE86AA21
+2025-11-17 07:35:42.363  9313-9456  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: 00002a19-0000-1000-8000-00805f9b34fb enable: true
+2025-11-17 07:35:42.462  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: fb005c81-02e7-f387-1cad-8acd2d8df0c8 enable: true
+2025-11-17 07:35:42.562  9313-9335  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: fb005c82-02e7-f387-1cad-8acd2d8df0c8 enable: true
+2025-11-17 07:35:42.712  9313-9335  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: fb005c51-02e7-f387-1cad-8acd2d8df0c8 enable: true
+2025-11-17 07:35:42.715  9313-9410  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_POLAR_ONLINE_STREAMING ready for device DE86AA21
+2025-11-17 07:35:42.912  9313-9335  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: fb005c52-02e7-f387-1cad-8acd2d8df0c8 enable: true
+2025-11-17 07:35:43.015  9313-9461  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_POLAR_DEVICE_TIME_SETUP ready for device DE86AA21
+2025-11-17 07:35:43.016  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_POLAR_FILE_TRANSFER ready for device DE86AA21
+2025-11-17 07:35:43.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Feature FEATURE_POLAR_ONLINE_STREAMING ready for device DE86AA21
+2025-11-17 07:35:43.168  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Getting stream settings for ECG
+2025-11-17 07:35:43.169  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Getting stream settings for ACC
+2025-11-17 07:35:43.265  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Battery level for device DE86AA21: 80
+2025-11-17 07:35:43.372  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [00002a23-0000-1000-8000-00805f9b34fb]: �������
+2025-11-17 07:35:43.372  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=SYSTEM_ID_HEX, value=A09E1AFFFEDE86AA)
+2025-11-17 07:35:43.465  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [FirmwareVersion]: 3.3.1��
+2025-11-17 07:35:43.466  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=00002a28-0000-1000-8000-00805f9b34fb, value=3.3.1��)
+2025-11-17 07:35:43.570  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [FirmwareRevision]: 5.0.0��
+2025-11-17 07:35:43.571  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=00002a26-0000-1000-8000-00805f9b34fb, value=5.0.0��)
+2025-11-17 07:35:43.665  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [HardwareRevision]: 00760690.03��
+2025-11-17 07:35:43.671  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=00002a27-0000-1000-8000-00805f9b34fb, value=00760690.03��)
+2025-11-17 07:35:43.765  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [SerialNumber]: DE86AA21��
+2025-11-17 07:35:43.765  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=00002a25-0000-1000-8000-00805f9b34fb, value=DE86AA21��)
+2025-11-17 07:35:43.870  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [ModelNumber]: H10��
+2025-11-17 07:35:43.871  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=00002a24-0000-1000-8000-00805f9b34fb, value=H10��)
+2025-11-17 07:35:43.970  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  DIS info received for device DE86AA21: [ManufacturerName]: Polar Electro Oy��
+2025-11-17 07:35:43.971  9313-9313  PolarManager            com.wboelens.polarrecorder           D  DIS info 2 received for device DE86AA21: DisInfo(key=00002a29-0000-1000-8000-00805f9b34fb, value=Polar Electro Oy��)
+2025-11-17 07:35:44.063  9313-9337  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: 00002a37-0000-1000-8000-00805f9b34fb enable: true
+2025-11-17 07:35:44.087  9313-9462  ProfileInstaller        com.wboelens.polarrecorder           D  Installing profile for com.wboelens.polarrecorder
+2025-11-17 07:35:44.619  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Fetching settings for device DE86AA21
+2025-11-17 07:35:44.719  9313-9313  LogViewModel            com.wboelens.polarrecorder           E  Failed to fetch device time (Polar H10 DE86AA21 do not support getTime)
+2025-11-17 07:35:44.720  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Device DE86AA21 Connected
+2025-11-17 07:35:44.744  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Saved DE86AA21 for auto-connect
+2025-11-17 07:35:44.775  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Saved DE86AA21 for auto-connect
+2025-11-17 07:35:48.160  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@cc66696
+2025-11-17 07:35:48.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ========== onStop CALLED ==========
+2025-11-17 07:35:48.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStop - Activity stopped
+2025-11-17 07:35:48.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStop - isConnectingToSpotify: false
+2025-11-17 07:35:48.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStop - spotifyAppRemote: CONNECTED
+2025-11-17 07:35:48.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStop - isRecording: false
+2025-11-17 07:35:48.165  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStop - Disconnecting from Spotify (not recording)
+2025-11-17 07:35:48.166  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Message; annotation class 27
+2025-11-17 07:35:48.167  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Message; annotation class 30
+2025-11-17 07:35:48.167  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Message; annotation class 30
+2025-11-17 07:35:48.174  9313-9313  PolarManager            com.wboelens.polarrecorder           D  onStop - Disconnected from Spotify, set spotifyAppRemote = null
+2025-11-17 07:35:48.175  9313-9313  PolarManager            com.wboelens.polarrecorder           D  ===================================
+2025-11-17 07:35:48.207  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): null
+2025-11-17 07:35:48.208  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  SpotifyManager cleaned up
+2025-11-17 07:35:48.208  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  Clear (mImeCallbacks.size=0)
+2025-11-17 07:35:48.208  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  switch root view (mImeCallbacks.size=0)
+2025-11-17 07:35:48.214  9313-9313  ViewRootImpl            com.wboelens.polarrecorder           D  Skipping stats log for color mode
+2025-11-17 07:35:48.219  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  Clear (mImeCallbacks.size=0)
+2025-11-17 07:35:48.219  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  switch root view (mImeCallbacks.size=0)
+2025-11-17 07:35:48.784  9313-9313  PolarManager            com.wboelens.polarrecorder           D  Stopping scan
+2025-11-17 07:35:50.804  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: false, track: Back In Black
+2025-11-17 07:35:52.212  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  onCreate: Notification type: music_pre
+2025-11-17 07:35:52.212  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  onCreate: Initial track: Back In Black by AC/DC (Album: Back In Black)
+2025-11-17 07:35:52.212  9313-9313  SurveyManager           com.wboelens.polarrecorder           D  Cleared pending survey for new session
+2025-11-17 07:35:52.212  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  onCreate: Initializing SurveyActivity with auto-record
+2025-11-17 07:35:52.212  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Recording was already active: false
+2025-11-17 07:35:52.221  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Permissions granted, starting auto-record flow
+2025-11-17 07:35:52.223  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Starting auto-record flow
+2025-11-17 07:35:52.223  9313-9313  AutoRecordViewModel     com.wboelens.polarrecorder           D  Device already connected, skipping scan/connect
+2025-11-17 07:35:52.224  9313-9313  ContentCaptureHelper    com.wboelens.polarrecorder           I  Setting logging level to OFF
+2025-11-17 07:35:52.233  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@6032c7
+2025-11-17 07:35:52.316  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 27
+2025-11-17 07:35:52.316  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.316  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.317  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.321  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.321  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.321  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.322  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.322  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.322  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 27
+2025-11-17 07:35:52.323  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.324  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.324  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.324  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.325  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.325  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.325  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.325  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.327  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.328  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.329  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.329  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.329  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.330  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.330  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.330  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.331  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.331  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.331  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.331  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.331  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.332  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.332  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.333  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:35:52.334  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.334  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:35:52.335  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 27
+2025-11-17 07:35:52.336  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.336  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.336  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.336  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.336  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.337  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.337  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.337  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:35:52.379  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  switch root view (mImeCallbacks.size=0)
+2025-11-17 07:35:52.381  9313-9313  InsetsController        com.wboelens.polarrecorder           D  hide(ime())
+2025-11-17 07:35:52.381  9313-9313  ImeTracker              com.wboelens.polarrecorder           I  com.wboelens.polarrecorder:4877088b: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2025-11-17 07:35:53.147  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  File system data saver initialized successfully
+2025-11-17 07:35:53.148  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify data saver initialized for recording: syra_20251117_073552
+2025-11-17 07:35:53.150  9313-9313  Choreographer           com.wboelens.polarrecorder           I  Skipped 50 frames!  The application may be doing too much work on its main thread.
+2025-11-17 07:35:53.163  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 27
+2025-11-17 07:35:53.163  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:35:53.163  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:35:53.181  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 27
+2025-11-17 07:35:53.182  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:53.182  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:53.182  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:53.182  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:53.182  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:53.183  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:35:53.183  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Subscribed to Spotify player state
+2025-11-17 07:35:53.183  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Connected to Spotify in SurveyActivity
+2025-11-17 07:35:53.183  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Connected to Spotify
+2025-11-17 07:35:53.187  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 27
+2025-11-17 07:35:53.187  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 27
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:53.188  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:53.189  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:35:53.189  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.189  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.189  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.189  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.189  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 27
+2025-11-17 07:35:53.190  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.190  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.190  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.190  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.191  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.192  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:35:53.192  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.192  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.192  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.192  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:35:53.193  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 27
+2025-11-17 07:35:53.193  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.193  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.193  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 27
+2025-11-17 07:35:53.193  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:53.193  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 27
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:53.194  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:53.195  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:53.195  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:35:53.195  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.195  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.195  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.196  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.197  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.197  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.197  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:35:53.197  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Music started playing - triggering auto-recording start
+2025-11-17 07:35:53.197  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Music started playing - checking if should restart recording
+2025-11-17 07:35:53.197  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Already starting a recording, ignoring playback callback
+2025-11-17 07:35:53.197  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Track: Back In Black by AC/DC, isPaused: false, position: 6864, trackId: spotify:track:08mG3Y1vljYA6bvDt4Wqkj
+2025-11-17 07:35:53.197  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify: Back In Black by AC/DC - Playing
+2025-11-17 07:35:54.162  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  App version: 2.0.3 (code: 21)
+2025-11-17 07:35:54.162  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Polar SDK version: 6.2.0
+2025-11-17 07:35:54.162  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  OS version: Android 16 (API 36)
+2025-11-17 07:35:54.162  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Phone: Google Pixel 7 Pro
+2025-11-17 07:35:54.162  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Recording syra_20251117_073552 started, saving to 2 data saver(s)
+2025-11-17 07:35:54.162  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Started tracking Spotify for recording: syra_20251117_073552
+2025-11-17 07:35:54.162  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify tracking enabled for this recording
+2025-11-17 07:35:54.167  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Starting HR stream for DE86AA21
+2025-11-17 07:35:54.168  9313-9410  BluetoothGatt           com.wboelens.polarrecorder           D  setCharacteristicNotification() - uuid: 00002a37-0000-1000-8000-00805f9b34fb enable: true
+2025-11-17 07:35:54.169  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Starting ECG stream for DE86AA21
+2025-11-17 07:35:54.170  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Starting ACC stream for DE86AA21
+2025-11-17 07:35:54.227  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Logging initial track that triggered notification
+2025-11-17 07:35:54.227  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Manually logging initial track: Back In Black by AC/DC (Album: Back In Black)
+2025-11-17 07:35:54.227  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify: Back In Black by AC/DC - Playing
+2025-11-17 07:35:54.229  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  [spotify] Successfully saved first track_info data to filesystem.
+2025-11-17 07:35:54.229  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Logged initial track: Back In Black by AC/DC
+2025-11-17 07:35:54.690  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Survey response stored (pending recording start)
+2025-11-17 07:35:54.691  9313-9313  SurveyManager           com.wboelens.polarrecorder           D  Stored pending survey response: pleasantness=1, energy=7
+2025-11-17 07:35:54.769  9313-9313  SurveyManager           com.wboelens.polarrecorder           D  Survey data written to pre.jsonl: {"timestamp":1763345154690,"pleasantness":1,"energy":7,"notification_type":"music_pre","formatted_time":"2025-11-17 07:35:54"}
+2025-11-17 07:35:54.769  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Pending survey saved to recording folder
+2025-11-17 07:35:54.769  9313-9313  SurveyManager           com.wboelens.polarrecorder           D  Saved pending survey to recording directory
+2025-11-17 07:35:54.896  9313-9411  LogViewModel            com.wboelens.polarrecorder           D  [DE86AA21] Successfully saved first ACC data to filesystem.
+2025-11-17 07:35:54.966  9313-9590  LogViewModel            com.wboelens.polarrecorder           D  [DE86AA21] Successfully saved first HR data to filesystem.
+2025-11-17 07:35:55.039  9313-9592  LogViewModel            com.wboelens.polarrecorder           D  [DE86AA21] Successfully saved first ECG data to filesystem.
+2025-11-17 07:35:55.171  9313-9313  AutoRecordViewModel     com.wboelens.polarrecorder           D  Auto-record flow completed successfully
+2025-11-17 07:35:56.511  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: false, track: Back In Black
+2025-11-17 07:35:56.545  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  Clear (mImeCallbacks.size=0)
+2025-11-17 07:35:56.545  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  switch root view (mImeCallbacks.size=0)
+2025-11-17 07:35:57.003  9313-9313  VRI[SurveyActivity]     com.wboelens.polarrecorder           D  visibilityChanged oldVisibility=true newVisibility=false
+2025-11-17 07:35:57.017  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): null
+2025-11-17 07:35:57.017  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Recording is active, keeping Spotify connected for monitoring
+2025-11-17 07:35:57.017  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  SurveyActivity destroyed, keeping recording active
+2025-11-17 07:35:57.021  9313-9373  HWUI                    com.wboelens.polarrecorder           D  endAllActiveAnimators on 0xb400007cd1157380 (UnprojectedRipple) with handle 0xb400007b6115e3d0
+2025-11-17 07:35:57.022  9313-9313  ViewRootImpl            com.wboelens.polarrecorder           D  Skipping stats log for color mode
+2025-11-17 07:36:03.258  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: false, track: Dirty Deeds Done Dirt Cheap
+2025-11-17 07:36:03.269  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: false, track: Dirty Deeds Done Dirt Cheap
+2025-11-17 07:36:03.278  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: false, track: Dirty Deeds Done Dirt Cheap
+2025-11-17 07:36:03.288  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Track: Dirty Deeds Done Dirt Cheap by AC/DC, isPaused: false, position: 133, trackId: spotify:track:2d4e45fmUnguxh6yqC7gNT
+2025-11-17 07:36:03.289  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify: Dirty Deeds Done Dirt Cheap by AC/DC - Playing
+2025-11-17 07:36:03.373  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: false, track: Dirty Deeds Done Dirt Cheap
+2025-11-17 07:36:08.382  9313-9395  SurveyNoti...ionService com.wboelens.polarrecorder           D  Recording is active, skipping survey notification
+2025-11-17 07:36:10.057  9313-9313  SpotifyManager          com.wboelens.polarrecorder           D  Track: Dirty Deeds Done Dirt Cheap by AC/DC, isPaused: true, position: 6814, trackId: spotify:track:2d4e45fmUnguxh6yqC7gNT
+2025-11-17 07:36:10.057  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Spotify: Dirty Deeds Done Dirt Cheap by AC/DC - Paused
+2025-11-17 07:36:10.066  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Music paused during recording - starting 60s timeout
+2025-11-17 07:36:10.066  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music paused - will send survey if paused for >60 seconds
+2025-11-17 07:36:10.073  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: true, track: Dirty Deeds Done Dirt Cheap
+2025-11-17 07:36:38.384  9313-9395  SurveyNoti...ionService com.wboelens.polarrecorder           D  Recording is active, skipping survey notification
+2025-11-17 07:37:08.388  9313-9395  SurveyNoti...ionService com.wboelens.polarrecorder           D  Recording is active, skipping survey notification
+2025-11-17 07:37:10.065  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Pause timeout reached (60s) - sending music_post notification
+2025-11-17 07:37:10.065  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music paused for >60 seconds - sending survey notification
+2025-11-17 07:37:10.084  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music post notification sent - will auto-stop in 120 seconds if not clicked
+2025-11-17 07:37:10.084  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Survey notification sent - will auto-stop in 120 seconds if not clicked
+2025-11-17 07:37:12.746  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  onCreate: Notification type: music_post
+2025-11-17 07:37:12.746  9313-9313  SurveyManager           com.wboelens.polarrecorder           D  Cleared pending survey for new session
+2025-11-17 07:37:12.746  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  onCreate: Initializing SurveyActivity with auto-record
+2025-11-17 07:37:12.746  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Recording was already active: true
+2025-11-17 07:37:12.759  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Music post notification - skipping auto-record (recording already active)
+2025-11-17 07:37:12.760  9313-9313  ContentCaptureHelper    com.wboelens.polarrecorder           I  Setting logging level to OFF
+2025-11-17 07:37:12.770  9313-9313  WindowOnBackDispatcher  com.wboelens.polarrecorder           D  setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@a629db6
+2025-11-17 07:37:12.871  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music post survey opened - notification timeout cancelled
+2025-11-17 07:37:12.898  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 27
+2025-11-17 07:37:12.898  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.898  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.899  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.899  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.899  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.899  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.901  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.901  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.902  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 27
+2025-11-17 07:37:12.902  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.902  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.902  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.902  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.903  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.904  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.905  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.905  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.905  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.905  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.905  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.905  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Info; annotation class 30
+2025-11-17 07:37:12.906  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.906  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/HelloDetails; annotation class 30
+2025-11-17 07:37:12.906  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 27
+2025-11-17 07:37:12.906  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.906  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.906  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.907  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.907  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.907  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.907  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.907  9313-9387  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Roles; annotation class 30
+2025-11-17 07:37:12.918  9313-9313  ImeBackDispatcher       com.wboelens.polarrecorder           D  switch root view (mImeCallbacks.size=0)
+2025-11-17 07:37:12.920  9313-9313  InsetsController        com.wboelens.polarrecorder           D  hide(ime())
+2025-11-17 07:37:12.920  9313-9313  ImeTracker              com.wboelens.polarrecorder           I  com.wboelens.polarrecorder:f4ae3ca2: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2025-11-17 07:37:13.217  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 27
+2025-11-17 07:37:13.218  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:37:13.218  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/WelcomeDetails; annotation class 30
+2025-11-17 07:37:13.222  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 27
+2025-11-17 07:37:13.222  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:37:13.223  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:37:13.223  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:37:13.224  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:37:13.224  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:37:13.225  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/UserStatus; annotation class 30
+2025-11-17 07:37:13.225  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Connected to Spotify in SurveyActivity
+2025-11-17 07:37:13.225  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Connected to Spotify
+2025-11-17 07:37:13.230  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 27
+2025-11-17 07:37:13.230  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.230  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.230  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.231  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.231  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 27
+2025-11-17 07:37:13.231  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:37:13.231  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:37:13.231  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:37:13.231  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerOptions; annotation class 30
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 27
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.232  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.233  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.233  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.233  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.233  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.233  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.233  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.234  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.234  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.234  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.234  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerRestrictions; annotation class 30
+2025-11-17 07:37:13.234  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.234  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.236  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.236  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/PlayerState; annotation class 30
+2025-11-17 07:37:13.236  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 27
+2025-11-17 07:37:13.236  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.236  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.236  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 27
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Album; annotation class 30
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.237  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 27
+2025-11-17 07:37:13.238  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:37:13.238  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:37:13.238  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:37:13.238  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Artist; annotation class 30
+2025-11-17 07:37:13.238  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.239  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.239  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.239  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.239  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.239  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.240  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.241  9313-9313  s.polarrecorder         com.wboelens.polarrecorder           W  Unable to resolve Lcom/spotify/protocol/types/Track; annotation class 30
+2025-11-17 07:37:13.242  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Music paused during recording - starting 60s timeout
+2025-11-17 07:37:13.242  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music paused - will send survey if paused for >60 seconds
+2025-11-17 07:37:13.534  9313-9313  SpotifyMonitorService   com.wboelens.polarrecorder           D  Player state changed - isPaused: true, track: Dirty Deeds Done Dirt Cheap
+2025-11-17 07:37:13.536  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Music paused during recording - starting 60s timeout
+2025-11-17 07:37:13.536  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music paused - will send survey if paused for >60 seconds
+2025-11-17 07:37:38.396  9313-9395  SurveyNoti...ionService com.wboelens.polarrecorder           D  Recording is active, skipping survey notification
+2025-11-17 07:38:03.766  9313-9330  s.polarrecorder         com.wboelens.polarrecorder           I  Background young concurrent mark compact GC freed 23MB AllocSpace bytes, 0(0B) LOS objects, 74% free, 8247KB/31MB, paused 569us,6.463ms total 61.925ms
+2025-11-17 07:38:08.404  9313-9395  SurveyNoti...ionService com.wboelens.polarrecorder           D  Recording is active, skipping survey notification
+2025-11-17 07:38:13.243  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Pause timeout reached (60s) - sending music_post notification
+2025-11-17 07:38:13.244  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music paused for >60 seconds - sending survey notification
+2025-11-17 07:38:13.273  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music post notification sent - will auto-stop in 120 seconds if not clicked
+2025-11-17 07:38:13.273  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Survey notification sent - will auto-stop in 120 seconds if not clicked
+2025-11-17 07:38:13.536  9313-9313  SurveyActivity          com.wboelens.polarrecorder           D  Pause timeout reached (60s) - sending music_post notification
+2025-11-17 07:38:13.537  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music paused for >60 seconds - sending survey notification
+2025-11-17 07:38:13.551  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Music post notification sent - will auto-stop in 120 seconds if not clicked
+2025-11-17 07:38:13.551  9313-9313  LogViewModel            com.wboelens.polarrecorder           D  Survey notification sent - will auto-stop in 120 seconds if not clicked
+2025-11-17 07:38:13.767  1548-1548  NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.wboelens.polarrecorder|2001|null|10442
+2025-11-17 07:38:14.803  9313-9330  s.polarrecorder         com.wboelens.polarrecorder           I  Background young concurrent mark compact GC freed 23MB AllocSpace bytes, 0(0B) LOS objects, 75% free, 8031KB/31MB, paused 354us,6ms total 65.673ms
+2025-11-17 07:38:33.805  1548-1615  AppOps                  system_server                        E  Operation not started: uid=10442 pkg=com.wboelens.polarrecorder(null) op=START_FOREGROUND
+---------------------------- PROCESS ENDED (9313) for package com.wboelens.polarrecorder ----------------------------

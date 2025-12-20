@@ -1,0 +1,381 @@
+Frequently asked questions
+SpotifyAppRemote connect/disconnect v0.4.0 vs v0.5.0
+// If your code looks like this for v0.4.0:
+SpotifyAppRemote.CONNECTOR.disconnect(mSpotifyAppRemote);
+SpotifyAppRemote.CONNECTOR.connect(this, mConnectionParams, mConnectionListener);
+// you should change it to this as of v0.5.0:
+SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+SpotifyAppRemote.connect(this, mConnectionParams, mConnectionListener);
+I want the Spotify app to notify my app when Spotify is active. Is it possible?
+
+You can register a broadcast receiver for an action "com.spotify.music.active". The broadcast is sent when a new track gets on top of the playing queue.
+
+To listen to the broadcast add the next lines to your AndroidManifest.xml file:
+<receiver android:name="<ReceiverClassName>">
+    <intent-filter>
+        <action android:name="com.spotify.music.active"/>
+    </intent-filter>
+</receiver>
+To get more information on BroadcastReceivers, have a look at the docs on the Android developer portal.
+
+
+Connect to App Remote
+
+The first thing we need to do is to use the SpotifyAppRemote.Connector to connect to Spotify and get an instance of SpotifyAppRemote. To do this, we call the connect method using the connectionParams we defined above. Add the following to your onStart method.
+Kotlin
+Java
+SpotifyAppRemote.connect(this, connectionParams, object : Connector.ConnectionListener {
+    override fun onConnected(appRemote: SpotifyAppRemote) {
+        spotifyAppRemote = appRemote
+        Log.d("MainActivity", "Connected! Yay!")
+        // Now you can start interacting with App Remote
+        connected()
+    }
+
+    override fun onFailure(throwable: Throwable) {
+        Log.e("MainActivity", throwable.message, throwable)
+        // Something went wrong when attempting to connect! Handle errors here
+    }
+})
+Play a Playlist
+
+To play a playlist given a Spotify playlist URI, we are going to connect to the Spotify app and use the PlayerApi command. From there we can get the PlayerApi directly and call play. Add the following to your private connected method:
+Kotlin
+Java
+// Play a playlist
+spotifyAppRemote.playerApi.play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL")
+
+Run the application and you should hear some feel-good indie tunes playing on your phone. If you prefer something more relaxing, why not try some sweet piano music spotify:playlist:37i9dQZF1DX7K31D69s4M1. If you don't hear music playing and end up in the onFailure callback above, please read up on connection errors and try again.
+Subscribe to PlayerState
+
+The PlayerApi offers, in addition to the play(uri) method we use above, the ability to subscribe to and poll for the state of the Spotify player. Add the following to your code to subscribe to PlayerState and log the track title and artist of the song that will be playing:
+Kotlin
+Java
+// Subscribe to PlayerState
+ spotifyAppRemote.playerApi.subscribeToPlayerState().setEventCallback {
+    val track: Track = it.track
+    Log.d("MainActivity", track.name + " by " + track.artist.name)
+}
+
+Run the app again. You should now see a log with the track name and artist of the currently playing track.
+Disconnecting from App Remote
+
+Don't forget to disconnect from App Remote when you no longer need it. Add the following to your onStop method.
+Kotlin
+Java
+override fun onStop() {
+    super.onStop()
+    spotifyAppRemote?.let {
+        SpotifyAppRemote.disconnect(it)
+    }
+
+}
+Next Steps
+
+Congratulations! You've interacted with the App Remote SDK for the first time. Time to celebrate, you did a great job! 👏
+
+Want more? Here's what you can do next:
+
+    Learn about best practices for handling App Remote SDK interactions and connections in your Android application.
+
+    Dive into other things you can do with the SDK in the App Remote SDK Reference.
+
+Source Code
+
+The Quick Start source code is below. Copy into your Main Activity.
+Kotlin
+Java
+package com.yourdomain.yourapp;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import android.util.Log;
+
+import com.spotify.android.appremote.api.ConnectionParams;
+import com.spotify.android.appremote.api.Connector;
+import com.spotify.android.appremote.api.SpotifyAppRemote;
+
+import com.spotify.protocol.client.Subscription;
+import com.spotify.protocol.types.PlayerState;
+import com.spotify.protocol.types.Track;
+
+class MainActivity : AppCompatActivity() {
+
+    private val clientId = "ad0911afa57949bba362003f601876b2"
+    private val redirectUri = "https://com.spotify.android.spotifysdkkotlindemo/callback"
+    private var spotifyAppRemote: SpotifyAppRemote? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val connectionParams = ConnectionParams.Builder(clientId)
+            .setRedirectUri(redirectUri)
+            .showAuthView(true)
+            .build()
+
+        SpotifyAppRemote.connect(this, connectionParams, object : Connector.ConnectionListener {
+            override fun onConnected(appRemote: SpotifyAppRemote) {
+                spotifyAppRemote = appRemote
+                Log.d("MainActivity", "Connected! Yay!")
+                // Now you can start interacting with App Remote
+                connected()
+            }
+
+            override fun onFailure(throwable: Throwable) {
+                Log.e("MainActivity", throwable.message, throwable)
+                // Something went wrong when attempting to connect! Handle errors here
+            }
+        })
+    }
+
+    private fun connected() {
+        spotifyAppRemote?.let {
+            // Play a playlist
+            val playlistURI = "spotify:playlist:37i9dQZF1DX2sUQwD7tbmL"
+            it.playerApi.play(playlistURI)
+            // Subscribe to PlayerState
+            it.playerApi.subscribeToPlayerState().setEventCallback {
+                val track: Track = it.track
+                Log.d("MainActivity", track.name + " by " + track.artist.name)
+            }
+        }
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        spotifyAppRemote?.let {
+            SpotifyAppRemote.disconnect(it)
+        }
+
+    }
+}
+
+
+Application Lifecycle
+Beta
+
+When an application connects to Spotify client through the SpotifyAppRemote API, it will prevent Spotify from shutting down even if the user is not playing anything. This is expected behavior - we want Spotify to remain active as long as there's something interacting with it. At the same time the application using the Spotify App Remote SDK should not keep Spotify alive if there's no need for it, for example if it's in the background. The Spotify client will take care of the background playback which means you don't need to do it. In most cases you don't need to implement your own service to keep the connection alive, it's enough to connect when user is actually interacting with your app and disconnect when they're not.
+
+We recommend connecting to Spotify in the onStart method of the Activity that shows the playback state and controls, and disconnecting in the onStop method. Do not keep the connection alive when your app is in the background, otherwise Spotify will not be able to shutdown when it's inactive. We also recommend that your app checks for an existing connection before connecting again - otherwise two connections will be created and this will keep Spotify running in the background until the app is killed.
+@Override
+protected void onStart() {
+    super.onStart();
+    SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+    SpotifyAppRemote.connect(this, mConnectionParams, mConnectionListener);
+}
+
+@Override
+protected void onStop() {
+    super.onStop();
+    SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+}
+
+If the connection succeeds, you're good to go! If it fails then you can use connection errors to show additional visual feedback to the user. For details about connection errors see the error handling page.
+
+Specifically, for cases where the user is not logged in to Spotify, or the user has not authorized your app, you can use the Authorization Library to prompt them to log in and approve the required scopes.
+Connector.ConnectionListener mConnectionListener = new Connector.ConnectionListener() {
+    @Override
+    public void onConnected(SpotifyAppRemote spotifyAppRemote) {
+        mSpotifyAppRemote = spotifyAppRemote;
+        // setup all the things
+    }
+
+    @Override
+    public void onFailure(Throwable error) {
+        if (error instanceof NotLoggedInException || error instanceof UserNotAuthorizedException) {
+            // Show login button and trigger the login flow from auth library when clicked
+        } else if (error instanceof CouldNotFindSpotifyApp) {
+            // Show button to download Spotify
+        }
+    }
+};
+
+@Override
+protected void onStart() {
+    super.onStart();
+    SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+    SpotifyAppRemote.connect(this, mConnectionParams, mConnectionListener);
+}
+
+@Override
+protected void onStop() {
+    super.onStop();
+    SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+}
+
+
+Making Remote Calls
+Beta
+
+This guide explains how to make remote calls from your app to the Spotify app with the App Remote SDK.
+
+When you make a call via any of the APIs you receive an instance of a CallResult<T> object. CallResult<T> lets you receive results both asynchronously or synchronously. Lets take a look at the example of a synchronous call:
+CallResult<PlayerState> playerStateCall = playerApi.getPlayerState();
+Result<PlayerState> playerStateResult = playerStateCall.await(10, TimeUnit.SECONDS);
+if (playerStateResult.isSuccessful()) {
+    PlayerState playerState = playerStateResult.getData();
+    // have some fun with playerState
+} else {
+    Throwable error = playerStateResult.getError();
+    // try to have some fun with the error
+}
+
+And the preferable async way to do the same thing:
+playerApi.getPlayerState()
+        .setResultCallback(playerState -> {
+            // have fun with playerState
+        })
+        .setErrorCallback(throwable -> {
+            // =(
+        });
+
+As a result of subscription you receive a Subscription<T> object. For example:
+playerApi.subscribeToPlayerState()
+        .setEventCallback(playerState -> {
+            // the Spotify App keeps you updated on PlayerState with this event
+        })
+        .setErrorCallback(throwable -> {
+            // =( =( =(
+        });
+Footer
+
+
+
+Package com.spotify.android.appremote.api
+
+    Interface Summary Interface 	Description
+    AppRemote 	
+    Interface specifying methods of App Remote API for connecting partner apps to Spotify app.
+    ConnectApi 	
+    Control on what device the Spotify App should be playing music Get an instance of a ConnectApi with SpotifyAppRemote.getConnectApi()
+    Connector 	
+    Use to connect to Spotify and retrieve an instance of SpotifyAppRemote
+    Connector.ConnectionListener 	 
+    ContentApi 	
+    Get a list of content or start playback of a playable content item Get an instance of a ContentApi with SpotifyAppRemote.getContentApi()
+    ContentApi.ContentType 	 
+    ImagesApi 	
+    Get images from the Spotify App Get an instance of an ImagesApi with SpotifyAppRemote.getImagesApi().
+    PlayerApi 	
+    Interact remotely with the Player of the Spotify app.
+    UserApi 	
+    Get user-related data and perform actions related to current user Get an instance of an UserApi with SpotifyAppRemote.getUserApi().
+    Class Summary Class 	Description
+    ConnectionParams 	 
+    ConnectionParams.Builder 	 
+    SpotifyAppRemote 	
+    Entry point for interacting with the Spotify app using the Spotify App Remote for Android
+    Enum Summary Enum 	Description
+    ConnectionParams.AuthMethod 	 
+    PlayerApi.StreamType 	
+    Available Streamtypes
+
+
+
+Package com.spotify.protocol.client
+
+    Interface Summary Interface 	Description
+    CallResult.ResultCallback<T> 	
+    Callback for receiving the result once it is available
+    PendingResult<T> 	 
+    Result<T> 	 
+    Subscription.EventCallback<T> 	 
+    Subscription.LifecycleCallback 	 
+    Class Summary Class 	Description
+    CallResult<T> 	
+    Abstracts an asynchronous or future result of type T for a call
+    PendingResultBase<T> 	 
+    Subscription<T> 	
+    Track a subscription for data of type T Set callbacks for events and subscription lifecycle.
+
+
+Package com.spotify.protocol.types
+
+    Interface Summary Interface 	Description
+    Item 	
+    The interface all models should implement.
+    Types 	 
+    Class Summary Class 	Description
+    Album 	 
+    Artist 	 
+    Capabilities 	
+    Capabilities of a user.
+    ChildrenPageRequest 	 
+    CrossfadeState 	
+    Represents the state of Spotify's audio crossfade setting.
+    Empty 	
+    Marks an empty (void) type
+    GetRecommendedContentItemsRequest 	 
+    HelloDetails 	 
+    Identifier 	 
+    Image 	 
+    ImageIdentifier 	
+    Identifier for image, other types uses Identifier.
+    ImageIdentifier is created with an uri String id and with a predefined Image.Dimension.
+    ImageUri 	 
+    Info 	 
+    LibraryState 	 
+    ListItem 	 
+    ListItems 	 
+    Message 	 
+    MotionState 	
+    A motion state in the Spotify app.
+    PlaybackPosition 	 
+    PlaybackSpeed 	 
+    PlayerContext 	
+    The current context of the player - such as an album or a playlist - and its metadata
+    PlayerOptions 	 
+    PlayerRestrictions 	 
+    PlayerState 	
+    A state of the player of the Spotify app.
+    Repeat 	 
+    Roles 	 
+    Shuffle 	 
+    Track 	 
+    Types.RequestId 	 
+    Types.SubscriptionId 	 
+    Uri 	 
+    Uris 	 
+    UriWithOptionExtras 	
+    Enables request of playback of a uri with option extras, when playback of a URI needs to be bundled together with specific playback behavior that cannot be decoupled from the play command
+    UserStatus 	 
+    VolumeState 	
+    The wrapper for current value of volume of active device over Spotify Connect.
+    WelcomeDetails 	 
+    Enum Summary Enum 	Description
+    Image.Dimension 	
+    Predefined image dimensions.
+    The max value is Image.Dimension.LARGE with a value of 720px.
+    PlaybackSpeed.PodcastPlaybackSpeed 	
+
+
+Package com.spotify.android.appremote.api.error
+
+    Exception Summary Exception 	Description
+    AuthenticationFailedException 	
+    Indicates the client failed to authenticate with Spotify.
+    CouldNotFindSpotifyApp 	
+    A Spotify app that supports App Remote was not found on the device
+    NotLoggedInException 	
+    Indicates there is no active user session in Spotify that can authorize the request to connect.
+    OfflineModeException 	
+    Indicates the Spotify user has set their Spotify app to be in offline mode, but app remote requires a call to be made to the backend.
+    SpotifyConnectionTerminatedException 	
+    The connection to the Spotify app was terminated
+    SpotifyDisconnectedException 	
+    The Spotify app was/is disconnected
+    SpotifyRemoteServiceException 	
+    Encapsulates possible SecurityException and IllegalStateException errors thrown by Context.startService(Intent) and Context.startForegroundService(Intent).
+
+    SecurityException - If the caller does not have permission to access the service or the service can not be found.
+    IllegalStateException - If the application is in a state where the service can not be started, be found, or be accessed (such as not in the foreground in a state when services are allowed).
+    UnsupportedFeatureVersionException 	
+    Indicates the feature set of the Spotify app and the current version of App Remote is not compatible.
+    UserNotAuthorizedException 	
+    Indicates the user has not/did not authorize this client of App Remote to use Spotify on the users behalf.
