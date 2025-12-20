@@ -1,0 +1,44 @@
+{"phoneTimestamp":1763352865241,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Spotify tracking enabled"}]}
+{"phoneTimestamp":1763352866906,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Connected to Spotify!"}]}
+{"phoneTimestamp":1763352866966,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Spotify: Aura by Shubh - Paused"}]}
+{"phoneTimestamp":1763352873244,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Connecting to device DE86F52B"}]}
+{"phoneTimestamp":1763352877092,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Fetching capabilities for device DE86F52B"}]}
+{"phoneTimestamp":1763352877999,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"DIS info received for device DE86F52B: [FirmwareVersion]: 3.2.0\u0000"}]}
+{"phoneTimestamp":1763352878043,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"DIS info received for device DE86F52B: [FirmwareRevision]: 5.0.0\u0000"}]}
+{"phoneTimestamp":1763352878092,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"DIS info received for device DE86F52B: [HardwareRevision]: 00760690.03\u0000"}]}
+{"phoneTimestamp":1763352878193,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"DIS info received for device DE86F52B: [SerialNumber]: DE86F52B\u0000"}]}
+{"phoneTimestamp":1763352878243,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"DIS info received for device DE86F52B: [ModelNumber]: H10\u0000"}]}
+{"phoneTimestamp":1763352878292,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"DIS info received for device DE86F52B: [ManufacturerName]: Polar Electro Oy\u0000"}]}
+{"phoneTimestamp":1763352878778,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Fetching settings for device DE86F52B"}]}
+{"phoneTimestamp":1763352878921,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"ERROR","message":"Failed to fetch device time (Polar H10 DE86F52B do not support getTime)"}]}
+{"phoneTimestamp":1763352878924,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Device DE86F52B Connected"}]}
+{"phoneTimestamp":1763352878972,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Saved DE86F52B for auto-connect"}]}
+{"phoneTimestamp":1763352878995,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Saved DE86F52B for auto-connect"}]}
+{"phoneTimestamp":1763352893395,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Connected to Spotify!"}]}
+{"phoneTimestamp":1763352893957,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"File system recording enabled at: content://com.android.externalstorage.documents/tree/primary%3AMovies/document/primary%3AMovies"}]}
+{"phoneTimestamp":1763352924356,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Starting auto-record flow"}]}
+{"phoneTimestamp":1763352925206,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"File system data saver initialized successfully"}]}
+{"phoneTimestamp":1763352925206,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Spotify data saver initialized for recording: syra_20251117_094524"}]}
+{"phoneTimestamp":1763352925246,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Connected to Spotify"}]}
+{"phoneTimestamp":1763352926208,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"App version: 2.0.3 (code: 21)"}]}
+{"phoneTimestamp":1763352926208,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Polar SDK version: 6.2.0"}]}
+{"phoneTimestamp":1763352926208,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"OS version: Android 13 (API 33)"}]}
+{"phoneTimestamp":1763352926208,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Phone: OnePlus IV2201"}]}
+{"phoneTimestamp":1763352926208,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"SUCCESS","message":"Recording syra_20251117_094524 started, saving to 2 data saver(s)"}]}
+{"phoneTimestamp":1763352926209,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Spotify tracking enabled for this recording"}]}
+{"phoneTimestamp":1763352926213,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Starting HR stream for DE86F52B"}]}
+{"phoneTimestamp":1763352926216,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Starting ECG stream for DE86F52B"}]}
+{"phoneTimestamp":1763352926219,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Starting ACC stream for DE86F52B"}]}
+{"phoneTimestamp":1763352926250,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"[DE86F52B] Successfully saved first LOG data to filesystem."}]}
+{"phoneTimestamp":1763352926357,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Spotify: Aura by Shubh - Playing"}]}
+{"phoneTimestamp":1763352926359,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"[spotify] Successfully saved first track_info data to filesystem."}]}
+{"phoneTimestamp":1763352926360,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Logged initial track: Aura by Shubh"}]}
+{"phoneTimestamp":1763352926878,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"[DE86F52B] Successfully saved first HR data to filesystem."}]}
+{"phoneTimestamp":1763352930110,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Survey response stored (pending recording start)"}]}
+{"phoneTimestamp":1763352930216,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Pending survey saved to recording folder"}]}
+{"phoneTimestamp":1763352931841,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Connected to Spotify!"}]}
+{"phoneTimestamp":1763352933171,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"[DE86F52B] Successfully saved first ACC data to filesystem."}]}
+{"phoneTimestamp":1763352933414,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"[DE86F52B] Successfully saved first ECG data to filesystem."}]}
+{"phoneTimestamp":1763352978482,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Music paused - will send survey if paused for \u003e60 seconds"}]}
+{"phoneTimestamp":1763352979739,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"ERROR","message":"Failed to connect to Spotify: null"}]}
+{"phoneTimestamp":1763352979766,"deviceId":"DE86F52B","recordingName":"syra_20251117_094524","dataType":"LOG","data":[{"type":"NORMAL","message":"Spotify connection failed: null"}]}
