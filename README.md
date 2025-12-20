@@ -19,7 +19,7 @@ The Android app serves as the central hub for data recording, ensuring synchroni
 *   **Multi-Sensor Integration**: Connects to Polar heart rate sensors (H10, OH1+, Verity Sense) via Bluetooth Low Energy (BLE) to capture:
     *   **ECG (Electrocardiogram)**: Raw voltage data (130Hz) for precise heart rate variability (HRV) analysis.
     *   **ACC (Accelerometer)**: 3-axis motion data (200Hz) to track physical activity and filter motion artifacts.
-    *   **PPG (Photoplethysmography)**: Optical heart rate data (OH1+/Verity Sense).
+    
 *   **Spotify Real-Time Tracking**: Uses the Spotify App Remote SDK to log:
     *   Track Metadata (ID, Name, Artist, Album, URI).
     *   Playback State (Play/Pause events, Seek positions).
