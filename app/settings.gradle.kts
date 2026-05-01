@@ -24,4 +24,3 @@ dependencyResolutionManagement {
 rootProject.name = "PolarRecorder"
 
 include(":app")
-include(":spotify-app-remote")

@@ -57,10 +57,6 @@ dependencies {
   testImplementation(libs.androidx.core.testing)
   coreLibraryDesugaring(libs.android.desugar)
 
-  // Spotify App Remote SDK
-  implementation(project(":spotify-app-remote"))
-  implementation(libs.gson)
-
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
   implementation(libs.material)
@@ -86,6 +82,5 @@ dependencies {
   implementation(libs.androidx.compose.material.iconsExtended)
   implementation(libs.androidx.activity.compose)
   implementation(libs.androidx.runtime.livedata)
-
   implementation(libs.gson)
 }
