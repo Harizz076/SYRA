@@ -57,8 +57,7 @@ class RecordingManager(
     private val logViewModel: LogViewModel,
     private val deviceViewModel: DeviceViewModel,
     private val preferencesManager: PreferencesManager,
-    private val dataSavers: DataSavers,
-    private val spotifyManager: SpotifyManager? = null,
+    private val dataSavers: DataSavers
 ) {
   companion object {
     private const val RETRY_COUNT = 3L
@@ -72,7 +71,7 @@ class RecordingManager(
   // Random notification timeout tracking
   private var randomTimeoutHandler: Handler? = null
   private var randomTimeoutRunnable: Runnable? = null
-  private val RANDOM_RECORDING_TIMEOUT_MS = 120000L // 120 seconds
+  private val RANDOM_RECORDING_TIMEOUT_MS = 180000L // 3 minutes
   private var randomRecordingStartTime: Long = 0
   var isRandomRecording: Boolean = false // Track if current recording is from random notification
   var hasRandomSurveySubmitted: Boolean = false // Track if survey was submitted for random recording
@@ -191,22 +190,20 @@ class RecordingManager(
       return
     }
 
-    val selectedDevices = deviceViewModel.selectedDevices.value
-    if (selectedDevices.isNullOrEmpty()) {
-      logViewModel.addLogError("Cannot start recording: No Polar devices selected")
-      return
-    }
-
-    val connectedDevices = deviceViewModel.connectedDevices.value ?: emptyList()
-    val connectedDeviceIds = connectedDevices.map { it.info.deviceId }
-    val disconnectedDevices =
-        selectedDevices.filter { !connectedDeviceIds.contains(it.info.deviceId) }
-    if (disconnectedDevices.isNotEmpty()) {
-      val disconnectedNames = disconnectedDevices.joinToString(", ") { it.info.name }
-      logViewModel.addLogError(
-          "Cannot start recording: Some selected devices are not connected: $disconnectedNames"
-      )
-      return
+    val selectedDevices = deviceViewModel.selectedDevices.value ?: emptyList()
+    if (selectedDevices.isEmpty()) {
+      logViewModel.addLogMessage("Warning: No Polar devices selected. Proceeding to record media and logs only.")
+    } else {
+      val connectedDevices = deviceViewModel.connectedDevices.value ?: emptyList()
+      val connectedDeviceIds = connectedDevices.map { it.info.deviceId }
+      val disconnectedDevices =
+          selectedDevices.filter { !connectedDeviceIds.contains(it.info.deviceId) }
+      if (disconnectedDevices.isNotEmpty()) {
+        val disconnectedNames = disconnectedDevices.joinToString(", ") { it.info.name }
+        logViewModel.addLogMessage(
+            "Warning: Some selected devices are not connected: $disconnectedNames. Proceeding anyway."
+        )
+      }
     }
 
     // Check if datasavers are initialized
@@ -239,15 +236,7 @@ class RecordingManager(
         "Recording $currentRecordingName started, saving to ${dataSavers.enabledCount} data saver(s)",
     )
 
-    // Start Spotify tracking if enabled
-    if (preferencesManager.spotifyEnabled) {
-      if (spotifyManager != null) {
-        spotifyManager.startTracking(currentRecordingName)
-        logViewModel.addLogMessage("Spotify tracking enabled for this recording")
-      } else {
-        logViewModel.addLogError("Spotify tracking is enabled but Spotify is not connected/active")
-      }
-    }
+
 
     // Start the foreground service
     val serviceIntent = Intent(context, RecordingService::class.java)
@@ -398,8 +387,7 @@ class RecordingManager(
       // tell dataSavers to stop saving
       dataSavers.asList().filter { it.isEnabled.value }.forEach { saver -> saver.stopSaving() }
 
-      // Stop Spotify tracking
-      spotifyManager?.stopTracking()
+
 
       _isRecording.value = false
 

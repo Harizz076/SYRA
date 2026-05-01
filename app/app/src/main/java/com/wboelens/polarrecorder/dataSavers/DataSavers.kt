@@ -12,8 +12,8 @@ class DataSavers(
   val mqtt: MQTTDataSaver = MQTTDataSaver(logViewModel, preferencesManager)
   val fileSystem: FileSystemDataSaver =
       FileSystemDataSaver(context, logViewModel, preferencesManager)
-  val spotify: SpotifyDataSaver =
-      SpotifyDataSaver(context, logViewModel, preferencesManager)
+  val mediaTrack: MediaTrackDataSaver =
+      MediaTrackDataSaver(context, logViewModel, preferencesManager)
 
   private val savers = mutableListOf<DataSaver>()
 
@@ -30,10 +30,10 @@ class DataSavers(
     }
     savers.add(fileSystem)
 
-    if (preferencesManager.spotifyEnabled) {
-      spotify.enable()
+    if (preferencesManager.mediaTrackEnabled) {
+      mediaTrack.enable()
     }
-    savers.add(spotify)
+    savers.add(mediaTrack)
   }
 
   fun iterator(): Iterator<DataSaver> = savers.iterator()

@@ -23,8 +23,7 @@ object Preferences {
       PreferenceConfig("file_system_recording_split_at_size_mb", 20)
   val FILE_SYSTEM_ENABLED = PreferenceConfig("file_system_enabled", false)
 
-  val SPOTIFY_ENABLED = PreferenceConfig("spotify_enabled", true)
-  val SPOTIFY_AUTHORIZED = PreferenceConfig("spotify_authorized", false)
+  val MEDIA_TRACK_ENABLED = PreferenceConfig("media_track_enabled", true)
 
   val RECORDING_NAME = PreferenceConfig("recording_name", "syra")
   val RECORDING_NAME_APPEND_TIMESTAMP = PreferenceConfig("recording_name_append_timestamp", true)
@@ -124,24 +123,14 @@ class PreferencesManager(context: Context) {
       mPref.edit().putBoolean(Preferences.FILE_SYSTEM_ENABLED.key, enabled).apply()
     }
 
-  var spotifyEnabled: Boolean
+  var mediaTrackEnabled: Boolean
     get() =
         mPref.getBoolean(
-            Preferences.SPOTIFY_ENABLED.key,
-            Preferences.SPOTIFY_ENABLED.defaultValue,
+            Preferences.MEDIA_TRACK_ENABLED.key,
+            Preferences.MEDIA_TRACK_ENABLED.defaultValue,
         )
     set(enabled) {
-      mPref.edit().putBoolean(Preferences.SPOTIFY_ENABLED.key, enabled).apply()
-    }
-
-  var spotifyAuthorized: Boolean
-    get() =
-        mPref.getBoolean(
-            Preferences.SPOTIFY_AUTHORIZED.key,
-            Preferences.SPOTIFY_AUTHORIZED.defaultValue,
-        )
-    set(authorized) {
-      mPref.edit().putBoolean(Preferences.SPOTIFY_AUTHORIZED.key, authorized).apply()
+      mPref.edit().putBoolean(Preferences.MEDIA_TRACK_ENABLED.key, enabled).apply()
     }
 
   var recordingName: String
