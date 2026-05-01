@@ -60,9 +60,9 @@ fun DataSaverInitializationScreen(
 
         device.info.deviceId to DeviceInfoForDataSaver(device.info.name, dataTypesWithLog.toSet())
       }.toMutableMap().apply {
-        // Add Spotify as a device if enabled
-        if (dataSavers.spotify.isEnabled.collectAsState().value) {
-          put("spotify", DeviceInfoForDataSaver("Spotify", setOf("track_info")))
+        // Add media track as a device if enabled
+        if (dataSavers.mediaTrack.isEnabled.collectAsState().value) {
+          put("mediaTrack", DeviceInfoForDataSaver("MediaTrack", setOf("track_info")))
         }
       }
 

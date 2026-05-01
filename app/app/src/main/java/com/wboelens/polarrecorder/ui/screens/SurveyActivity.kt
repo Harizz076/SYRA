@@ -15,44 +15,27 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.spotify.android.appremote.api.ConnectionParams
-import com.spotify.android.appremote.api.Connector
-import com.spotify.android.appremote.api.SpotifyAppRemote
-import com.wboelens.polarrecorder.MainActivity
+
 import com.wboelens.polarrecorder.PolarRecorderApplication
 import com.wboelens.polarrecorder.dataSavers.DataSavers
 import com.wboelens.polarrecorder.managers.PermissionManager
 import com.wboelens.polarrecorder.managers.PolarManager
 import com.wboelens.polarrecorder.managers.PreferencesManager
 import com.wboelens.polarrecorder.managers.RecordingManager
-import com.wboelens.polarrecorder.managers.SpotifyManager
+import com.wboelens.polarrecorder.managers.SurveyManager
 import com.wboelens.polarrecorder.ui.theme.AppTheme
+import com.wboelens.polarrecorder.viewModels.AutoRecordStatus
 import com.wboelens.polarrecorder.viewModels.AutoRecordViewModel
 import com.wboelens.polarrecorder.viewModels.DeviceViewModel
 import com.wboelens.polarrecorder.viewModels.LogViewModel
 
 class SurveyActivity : ComponentActivity() {
 
-    // Spotify connection
-    private val clientId = "3c52f0046fa342baa89e7b66004177f8"
-    private val redirectUri = "com.wboelens.polarrecorder://callback"
-    private var spotifyAppRemote: SpotifyAppRemote? = null
-
-    // Pause timeout tracking
-    private var pauseTimeoutHandler: android.os.Handler? = null
-    private var pauseTimeoutRunnable: Runnable? = null
-    private var isPausedDuringRecording = false
-    private val PAUSE_TIMEOUT_MS = 60000L // 60 seconds
-
-
-    // Use shared instances from Application
     private val deviceViewModel: DeviceViewModel
         get() = PolarRecorderApplication.deviceViewModel
 
     private val logViewModel: LogViewModel
         get() = PolarRecorderApplication.logViewModel
-
-    private val autoRecordViewModel: AutoRecordViewModel by viewModels()
 
     private val polarManager: PolarManager
         get() = PolarRecorderApplication.polarManager
@@ -66,11 +49,10 @@ class SurveyActivity : ComponentActivity() {
     private val dataSavers: DataSavers
         get() = PolarRecorderApplication.dataSavers
 
-    private val spotifyManager: SpotifyManager
-        get() = PolarRecorderApplication.spotifyManager
-
-    private val surveyManager: com.wboelens.polarrecorder.managers.SurveyManager
+    private val surveyManager: SurveyManager
         get() = PolarRecorderApplication.surveyManager
+
+    private val autoRecordViewModel: AutoRecordViewModel by viewModels()
 
     private lateinit var permissionManager: PermissionManager
 
@@ -80,8 +62,8 @@ class SurveyActivity : ComponentActivity() {
     // Track if we're currently starting a recording to prevent double-initialization
     private var isStartingRecording = false
 
-    // Notification type from intent
-    private var notificationType: String = "music_pre"
+    // Notification type from intent (reactive state to handle onNewIntent seamlessly)
+    private var notificationTypeState = androidx.compose.runtime.mutableStateOf("music_pre")
 
     // Track info from notification (for logging the initial song)
     private var initialTrackName: String? = null
@@ -99,7 +81,7 @@ class SurveyActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         // Get notification type from intent
-        notificationType = intent.getStringExtra("notification_type") ?: "music_pre"
+        notificationTypeState.value = intent.getStringExtra("notification_type") ?: "music_pre"
 
         // Get track info from intent (if from music notification)
         initialTrackName = intent.getStringExtra("track_name")
@@ -109,7 +91,7 @@ class SurveyActivity : ComponentActivity() {
         initialTrackDuration = intent.getLongExtra("track_duration", -1).takeIf { it >= 0 }
         initialTrackPosition = intent.getLongExtra("track_position", -1).takeIf { it >= 0 }
 
-        Log.d(TAG, "onCreate: Notification type: $notificationType")
+        Log.d(TAG, "onCreate: Notification type: ${notificationTypeState.value}")
         if (initialTrackName != null) {
             Log.d(TAG, "onCreate: Initial track: $initialTrackName by $initialTrackArtist (Album: $initialTrackAlbum)")
         }
@@ -123,23 +105,13 @@ class SurveyActivity : ComponentActivity() {
         val wasRecordingActive = recordingManager.isRecording.value
         Log.d(TAG, "Recording was already active: $wasRecordingActive")
 
-        // Initialize pause timeout handler
-        pauseTimeoutHandler = android.os.Handler(mainLooper)
-
-
-        // Set up callback for when music starts playing after recording stopped
-        setupSpotifyPlaybackCallback()
-
-        // Connect to Spotify for tracking
-        connectToSpotify()
-
         // Only initialize permission manager locally
         permissionManager = PermissionManager(this)
 
         setContent {
             AppTheme {
                 SurveyScreen(
-                    notificationType = notificationType,
+                    notificationType = notificationTypeState.value,
                     autoRecordViewModel = autoRecordViewModel,
                     surveyManager = surveyManager,
                     dataSavers = dataSavers,
@@ -147,7 +119,7 @@ class SurveyActivity : ComponentActivity() {
                     onCancelRecording = { handleCancelRecording() },
                     onNavigateToConnect = {
                         // Navigate to MainActivity to connect devices
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, com.wboelens.polarrecorder.MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
@@ -156,7 +128,7 @@ class SurveyActivity : ComponentActivity() {
         }
 
         // For music_post, don't start auto-record (recording already active)
-        if (notificationType == "music_post") {
+        if (notificationTypeState.value == "music_post") {
             Log.d(TAG, "Music post notification - skipping auto-record (recording already active)")
             return
         }
@@ -166,10 +138,10 @@ class SurveyActivity : ComponentActivity() {
             Log.d(TAG, "Permissions granted, starting auto-record flow")
 
             // Check if recording was already active
-            val wasRecordingActive = recordingManager.isRecording.value
+            val currentWasRecordingActive = recordingManager.isRecording.value
 
             // If recording was not already active, mark that we started it
-            if (!wasRecordingActive) {
+            if (!currentWasRecordingActive) {
                 didStartRecording = true
                 isStartingRecording = true // Prevent callback from triggering duplicate flow
             }
@@ -182,218 +154,23 @@ class SurveyActivity : ComponentActivity() {
                 preferencesManager,
                 logViewModel,
                 surveyManager,
-                notificationType
+                notificationTypeState.value
             )
 
             // Start random notification timeout if this is a random notification
-            if (notificationType == "random") {
+            if (notificationTypeState.value == "random") {
                 recordingManager.startRandomTimeout()
             }
 
             // Clear the flag after a delay to allow the flow to complete
             android.os.Handler(mainLooper).postDelayed({
                 isStartingRecording = false
-            }, 5000) // 5 seconds should be enough for initialization
-
-            // Log initial track info if available
-            logInitialTrackInfo()
-        }
-    }
-
-    private fun logInitialTrackInfo() {
-        // Wait a bit for recording to start and Spotify tracking to be enabled
-        android.os.Handler(mainLooper).postDelayed({
-            if (initialTrackName != null && initialTrackArtist != null && recordingManager.isRecording.value) {
-                Log.d(TAG, "Logging initial track that triggered notification")
-
-                // Manually save initial track info
-                spotifyManager.logInitialTrack(
-                    trackName = initialTrackName!!,
-                    artistName = initialTrackArtist!!,
-                    albumName = initialTrackAlbum ?: "Unknown",
-                    trackUri = initialTrackUri ?: "",
-                    duration = initialTrackDuration ?: 0L,
-                    position = initialTrackPosition ?: 0L,
-                    isPaused = false
-                )
-
-                logViewModel.addLogMessage("Logged initial track: $initialTrackName by $initialTrackArtist")
-            }
-        }, 2000) // Wait 2 seconds for recording to initialize
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        // Cancel any pending pause timeout
-        cancelPauseTimeout()
-
-
-        // DON'T disconnect from Spotify if recording is active
-        // Keep the connection for pause monitoring
-        if (recordingManager.isRecording.value) {
-            Log.d(TAG, "Recording is active, keeping Spotify connected for monitoring")
-            // Just remove our local reference but don't disconnect
-            spotifyAppRemote = null
-        } else {
-            // Only disconnect if not recording
-            spotifyAppRemote?.let {
-                SpotifyAppRemote.disconnect(it)
-                spotifyAppRemote = null
-                spotifyManager.setSpotifyAppRemote(null)
-                Log.d(TAG, "Disconnected from Spotify")
-            }
-        }
-
-        // NEVER stop recording from SurveyActivity
-        // The recording should continue even after survey is closed
-        // Only stop when user explicitly stops from MainActivity or pause timeout
-        Log.d(TAG, "SurveyActivity destroyed, keeping recording active")
-    }
-
-    private fun connectToSpotify() {
-        val connectionParams = ConnectionParams.Builder(clientId)
-            .setRedirectUri(redirectUri)
-            .showAuthView(false)
-            .build()
-
-        SpotifyAppRemote.connect(this, connectionParams, object : Connector.ConnectionListener {
-            override fun onConnected(appRemote: SpotifyAppRemote) {
-                spotifyAppRemote = appRemote
-                spotifyManager.setSpotifyAppRemote(appRemote)
-                Log.d(TAG, "Connected to Spotify in SurveyActivity")
-                logViewModel.addLogMessage("Connected to Spotify")
-
-                // Subscribe to player state for pause timeout monitoring
-                subscribeToPlayerState()
-            }
-
-            override fun onFailure(throwable: Throwable) {
-                Log.e(TAG, "Failed to connect to Spotify", throwable)
-                logViewModel.addLogError("Failed to connect to Spotify: ${throwable.message}", false)
-            }
-        })
-    }
-
-    private fun subscribeToPlayerState() {
-        spotifyAppRemote?.playerApi?.subscribeToPlayerState()?.setEventCallback { playerState ->
-            handlePlayerStateForTimeout(playerState.isPaused)
-        }
-    }
-
-    private fun handlePlayerStateForTimeout(isPaused: Boolean) {
-        // Only monitor pause timeout if recording is active
-        // Reset state if recording is not active
-        if (!recordingManager.isRecording.value) {
-            if (isPausedDuringRecording) {
-                isPausedDuringRecording = false
-                cancelPauseTimeout()
-            }
-            return
-        }
-
-        if (isPaused) {
-            // Music paused - start timeout countdown
-            if (!isPausedDuringRecording) {
-                isPausedDuringRecording = true
-                startPauseTimeout()
-                Log.d(TAG, "Music paused during recording - starting 60s timeout")
-                logViewModel.addLogMessage("Music paused - will send survey if paused for >60 seconds")
-            }
-        } else {
-            // Music resumed - cancel timeout
-            if (isPausedDuringRecording) {
-                isPausedDuringRecording = false
-                cancelPauseTimeout()
-                Log.d(TAG, "Music resumed - canceling pause timeout")
-                logViewModel.addLogMessage("Music resumed - continuing recording")
-            }
-        }
-    }
-
-    private fun startPauseTimeout() {
-        // Cancel any existing timeout
-        cancelPauseTimeout()
-
-        // Create new timeout runnable
-        pauseTimeoutRunnable = Runnable {
-            Log.d(TAG, "Pause timeout reached (60s) - sending music_post notification")
-            logViewModel.addLogMessage("Music paused for >60 seconds - sending survey notification")
-
-            if (recordingManager.isRecording.value) {
-                // Send notification instead of stopping
-                com.wboelens.polarrecorder.utils.NotificationHelper.showMusicPostNotification(this)
-
-                // Start 120-second notification timeout
-                recordingManager.startMusicPostNotificationTimeout {
-                    // Callback if notification expires without being clicked
-                    Log.d(TAG, "Music post notification expired - recording stopped")
-                }
-
-                // Reset pause flag
-                isPausedDuringRecording = false
-
-                logViewModel.addLogMessage("Survey notification sent - will auto-stop in 120 seconds if not clicked")
-            }
-        }
-
-        // Schedule timeout for 60 seconds
-        pauseTimeoutHandler?.postDelayed(pauseTimeoutRunnable!!, PAUSE_TIMEOUT_MS)
-    }
-
-    private fun cancelPauseTimeout() {
-        pauseTimeoutRunnable?.let {
-            pauseTimeoutHandler?.removeCallbacks(it)
-            pauseTimeoutRunnable = null
-        }
-    }
-
-
-    private fun setupSpotifyPlaybackCallback() {
-        // Set callback to restart recording when music plays after it was stopped
-        spotifyManager.onPlaybackStarted = {
-            Log.d(TAG, "Music started playing - checking if should restart recording")
-
-            // Don't restart if we're already in the process of starting a recording
-            if (!isStartingRecording && !recordingManager.isRecording.value) {
-                // Only restart if we're in SurveyActivity and not already recording
-                Log.d(TAG, "Restarting auto-record flow due to music playback")
-                logViewModel.addLogMessage("Music playing - restarting auto-recording")
-
-                // Mark that we're starting a new recording
-                didStartRecording = true
-                isPausedDuringRecording = false
-                isStartingRecording = true
-
-                // Request permissions and start auto-record flow
-                permissionManager.checkAndRequestPermissions {
-                    autoRecordViewModel.startAutoRecordFlow(
-                        polarManager,
-                        deviceViewModel,
-                        recordingManager,
-                        dataSavers,
-                        preferencesManager,
-                        logViewModel,
-                        surveyManager
-                    )
-
-                    // Clear the flag after a delay
-                    android.os.Handler(mainLooper).postDelayed({
-                        isStartingRecording = false
-                    }, 5000)
-                }
-            } else {
-                if (isStartingRecording) {
-                    Log.d(TAG, "Already starting a recording, ignoring playback callback")
-                } else {
-                    Log.d(TAG, "Recording already active, not restarting")
-                }
-            }
+            }, 5000) // 500ms delay to show "Submitted ✓" feedback
         }
     }
 
     private fun handleClose() {
-        if (notificationType == "random") {
+        if (notificationTypeState.value == "random") {
             // For random notifications, check if 120 seconds have elapsed
             val remainingTime = recordingManager.getRemainingRandomTime()
 
@@ -441,13 +218,29 @@ class SurveyActivity : ComponentActivity() {
         // Close the activity
         finish()
     }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        
+        notificationTypeState.value = intent.getStringExtra("notification_type") ?: "music_pre"
+        
+        initialTrackName = intent.getStringExtra("track_name")
+        initialTrackArtist = intent.getStringExtra("track_artist")
+        initialTrackAlbum = intent.getStringExtra("track_album")
+        initialTrackUri = intent.getStringExtra("track_uri")
+        initialTrackDuration = intent.getLongExtra("track_duration", -1).takeIf { it >= 0 }
+        initialTrackPosition = intent.getLongExtra("track_position", -1).takeIf { it >= 0 }
+        
+        Log.d(TAG, "onNewIntent: Reused existing activity. Notification type updated to: ${notificationTypeState.value}")
+    }
 }
 
 @Composable
 fun SurveyScreen(
     notificationType: String,
     autoRecordViewModel: AutoRecordViewModel,
-    surveyManager: com.wboelens.polarrecorder.managers.SurveyManager,
+    surveyManager: SurveyManager,
     dataSavers: DataSavers,
     onClose: () -> Unit,
     onCancelRecording: () -> Unit,
@@ -455,6 +248,7 @@ fun SurveyScreen(
 ) {
     val status by autoRecordViewModel.status.collectAsState()
     val statusMessage by autoRecordViewModel.statusMessage.collectAsState()
+    val focusManager = androidx.compose.ui.platform.LocalFocusManager.current
 
     // State for slider values (1-7 scale) - start at middle value (4)
     // Use key with timestamp to force recreation on new survey
@@ -463,6 +257,8 @@ fun SurveyScreen(
     var energyValue by remember(surveyKey) { mutableFloatStateOf(4f) }
     var musicLikingValue by remember(surveyKey) { mutableFloatStateOf(4f) }
     var musicFamiliarityValue by remember(surveyKey) { mutableFloatStateOf(4f) }
+    var goalDescription by remember(surveyKey) { mutableStateOf("") }
+    var goalAchieved by remember(surveyKey) { mutableStateOf<Boolean?>(null) }
     var hasSubmitted by remember(surveyKey) { mutableStateOf(false) }
 
     // Mark music_post survey as opened (cancel notification timeout)
@@ -543,9 +339,9 @@ fun SurveyScreen(
 
                     Text(
                         text = if (notificationType == "music_post")
-                            "Please answer these four questions"
+                            "Please answer these five questions"
                         else
-                            "Please answer these two questions",
+                            "Please answer these three questions",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         textAlign = TextAlign.Center
@@ -590,6 +386,31 @@ fun SurveyScreen(
                         onValueChange = { energyValue = it }
                     )
 
+                    // Question 3 (pre-survey only): Goal description
+                    if (notificationType != "music_post") {
+                        Spacer(modifier = Modifier.height(questionSpacing))
+                        Text(
+                            text = "What is your intention for listening to music right now?",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        OutlinedTextField(
+                            value = goalDescription,
+                            onValueChange = { goalDescription = it },
+                            placeholder = { Text("e.g. to relax, to focus, to boost my mood…") },
+                            modifier = Modifier.fillMaxWidth(),
+                            minLines = 2,
+                            maxLines = 4,
+                            keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(
+                                imeAction = androidx.compose.ui.text.input.ImeAction.Done
+                            ),
+                            keyboardActions = androidx.compose.foundation.text.KeyboardActions(
+                                onDone = { focusManager.clearFocus() }
+                            )
+                        )
+                    }
+
                     // Additional questions for music_post
                     if (notificationType == "music_post") {
                         Spacer(modifier = Modifier.height(questionSpacing))
@@ -611,6 +432,49 @@ fun SurveyScreen(
                             value = musicFamiliarityValue,
                             onValueChange = { musicFamiliarityValue = it }
                         )
+
+                        Spacer(modifier = Modifier.height(questionSpacing))
+
+                        // Question 5: Goal achieved (yes / no)
+                        Text(
+                            text = "Did the music help you achieve your intended goal?",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(12.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Button(
+                                onClick = { goalAchieved = true },
+                                modifier = Modifier.weight(1f),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = if (goalAchieved == true)
+                                        MaterialTheme.colorScheme.primary
+                                    else
+                                        MaterialTheme.colorScheme.surfaceVariant,
+                                    contentColor = if (goalAchieved == true)
+                                        MaterialTheme.colorScheme.onPrimary
+                                    else
+                                        MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            ) { Text("Yes") }
+                            Button(
+                                onClick = { goalAchieved = false },
+                                modifier = Modifier.weight(1f),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = if (goalAchieved == false)
+                                        MaterialTheme.colorScheme.error
+                                    else
+                                        MaterialTheme.colorScheme.surfaceVariant,
+                                    contentColor = if (goalAchieved == false)
+                                        MaterialTheme.colorScheme.onError
+                                    else
+                                        MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            ) { Text("No") }
+                        }
                     }
 
                     Spacer(modifier = Modifier.height(sectionSpacing))
@@ -624,7 +488,9 @@ fun SurveyScreen(
                                 energy = energyValue.toInt(),
                                 notificationType = notificationType,
                                 musicLiking = if (notificationType == "music_post") musicLikingValue.toInt() else null,
-                                musicFamiliarity = if (notificationType == "music_post") musicFamiliarityValue.toInt() else null
+                                musicFamiliarity = if (notificationType == "music_post") musicFamiliarityValue.toInt() else null,
+                                goalDescription = if (notificationType != "music_post" && goalDescription.isNotBlank()) goalDescription else null,
+                                goalAchieved = if (notificationType == "music_post") goalAchieved else null
                             )
 
                             // Store the survey response
@@ -677,7 +543,7 @@ fun SurveyScreen(
                         .fillMaxWidth()
                         .padding(horizontal = if (isWideScreen) 48.dp else 0.dp)
                         .heightIn(min = 48.dp),
-                    enabled = !hasSubmitted
+                    enabled = !hasSubmitted && (notificationType != "music_post" || goalAchieved != null)
                 ) {
                     Text(
                         text = if (hasSubmitted) "Submitted ✓" else "Submit",
@@ -779,24 +645,24 @@ fun SurveyQuestion(
 
 @Composable
 fun AutoRecordStatusBar(
-    status: com.wboelens.polarrecorder.viewModels.AutoRecordStatus,
+    status: AutoRecordStatus,
     statusMessage: String,
     onNavigateToConnect: () -> Unit
 ) {
     val isFailureState = status.name.startsWith("FAILED")
     val backgroundColor = when {
-        status == com.wboelens.polarrecorder.viewModels.AutoRecordStatus.RECORDING ->
+        status == AutoRecordStatus.RECORDING ->
             MaterialTheme.colorScheme.primaryContainer
         isFailureState ->
             MaterialTheme.colorScheme.errorContainer
-        status == com.wboelens.polarrecorder.viewModels.AutoRecordStatus.IDLE ->
+        status == AutoRecordStatus.IDLE ->
             MaterialTheme.colorScheme.surfaceVariant
         else ->
             MaterialTheme.colorScheme.secondaryContainer
     }
 
     val contentColor = when {
-        status == com.wboelens.polarrecorder.viewModels.AutoRecordStatus.RECORDING ->
+        status == AutoRecordStatus.RECORDING ->
             MaterialTheme.colorScheme.onPrimaryContainer
         isFailureState ->
             MaterialTheme.colorScheme.onErrorContainer
@@ -874,8 +740,8 @@ fun AutoRecordStatusBar(
                     }
                 }
 
-                if (status != com.wboelens.polarrecorder.viewModels.AutoRecordStatus.IDLE &&
-                    status != com.wboelens.polarrecorder.viewModels.AutoRecordStatus.RECORDING) {
+                if (status != AutoRecordStatus.IDLE &&
+                    status != AutoRecordStatus.RECORDING) {
                     CircularProgressIndicator(
                         modifier = Modifier.size(32.dp),
                         color = contentColor,
@@ -888,18 +754,18 @@ fun AutoRecordStatusBar(
 }
 
 @Composable
-private fun getStatusTitle(status: com.wboelens.polarrecorder.viewModels.AutoRecordStatus): String {
+private fun getStatusTitle(status: AutoRecordStatus): String {
     return when (status) {
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.IDLE -> "Auto-Record Ready"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.SCANNING -> "Scanning for Devices"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.CONNECTING -> "Connecting to Device"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.CONFIGURING -> "Configuring Device"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.INITIALIZING_SAVERS -> "Initializing Storage"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.RECORDING -> "● Recording Active"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.FAILED_SCANNING -> "Connection Failed"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.FAILED_CONNECTING -> "Connection Failed"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.FAILED_CONFIGURING -> "Configuration Failed"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.FAILED_INITIALIZING -> "Initialization Failed"
-        com.wboelens.polarrecorder.viewModels.AutoRecordStatus.FAILED_RECORDING -> "Recording Failed"
+        AutoRecordStatus.IDLE -> "Auto-Record Ready"
+        AutoRecordStatus.SCANNING -> "Scanning for Devices"
+        AutoRecordStatus.CONNECTING -> "Connecting to Device"
+        AutoRecordStatus.CONFIGURING -> "Configuring Device"
+        AutoRecordStatus.INITIALIZING_SAVERS -> "Initializing Storage"
+        AutoRecordStatus.RECORDING -> "● Recording Active"
+        AutoRecordStatus.FAILED_SCANNING -> "Connection Failed"
+        AutoRecordStatus.FAILED_CONNECTING -> "Connection Failed"
+        AutoRecordStatus.FAILED_CONFIGURING -> "Configuration Failed"
+        AutoRecordStatus.FAILED_INITIALIZING -> "Initialization Failed"
+        AutoRecordStatus.FAILED_RECORDING -> "Recording Failed"
     }
 }

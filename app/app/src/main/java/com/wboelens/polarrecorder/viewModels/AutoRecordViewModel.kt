@@ -99,8 +99,19 @@ class AutoRecordViewModel : ViewModel() {
 
                 val autoConnectDeviceId = polarManager.getAutoConnectDeviceId()
                 if (autoConnectDeviceId.isEmpty()) {
-                    _status.value = AutoRecordStatus.FAILED_SCANNING
-                    _statusMessage.value = "No saved device found. Tap to connect."
+                    Log.d(TAG, "No auto-connect device ID found. Proceeding without Polar device.")
+                    _status.value = AutoRecordStatus.CONFIGURING
+                    _statusMessage.value = "No Polar device configured. Recording media only."
+                    delay(500)
+                    initializeDataSaversAndStartRecording(
+                        deviceViewModel,
+                        recordingManager,
+                        dataSavers,
+                        preferencesManager,
+                        emptyList(),
+                        surveyManager,
+                        notificationType
+                    )
                     return@launch
                 }
 
@@ -124,8 +135,19 @@ class AutoRecordViewModel : ViewModel() {
 
                 if (!deviceFound) {
                     polarManager.stopPeriodicScanning()
-                    _status.value = AutoRecordStatus.FAILED_SCANNING
-                    _statusMessage.value = "Device not found. Tap to connect."
+                    Log.d(TAG, "Polar device not found during scan. Proceeding without Polar device.")
+                    _status.value = AutoRecordStatus.CONFIGURING
+                    _statusMessage.value = "Polar device not found. Recording media only."
+                    delay(500)
+                    initializeDataSaversAndStartRecording(
+                        deviceViewModel,
+                        recordingManager,
+                        dataSavers,
+                        preferencesManager,
+                        emptyList(),
+                        surveyManager,
+                        notificationType
+                    )
                     return@launch
                 }
 
@@ -170,8 +192,19 @@ class AutoRecordViewModel : ViewModel() {
                 }
 
                 if (!connected) {
-                    _status.value = AutoRecordStatus.FAILED_CONNECTING
-                    _statusMessage.value = "Connection timeout. Tap to retry."
+                    Log.d(TAG, "Polar device connection timed out. Proceeding without Polar device.")
+                    _status.value = AutoRecordStatus.CONFIGURING
+                    _statusMessage.value = "Polar connection failed. Recording media only."
+                    delay(500)
+                    initializeDataSaversAndStartRecording(
+                        deviceViewModel,
+                        recordingManager,
+                        dataSavers,
+                        preferencesManager,
+                        deviceViewModel.selectedDevices.value ?: emptyList(),
+                        surveyManager,
+                        notificationType
+                    )
                     return@launch
                 }
 
@@ -185,9 +218,7 @@ class AutoRecordViewModel : ViewModel() {
                 // Step 4: Initialize data savers and start recording
                 val selectedDevices = deviceViewModel.selectedDevices.value ?: emptyList()
                 if (selectedDevices.isEmpty()) {
-                    _status.value = AutoRecordStatus.FAILED_CONFIGURING
-                    _statusMessage.value = "No devices selected. Tap to retry."
-                    return@launch
+                    Log.w(TAG, "No Polar devices selected. Proceeding to record media & logs only.")
                 }
 
                 initializeDataSaversAndStartRecording(
@@ -254,9 +285,9 @@ class AutoRecordViewModel : ViewModel() {
                         dataTypesWithLog.toSet()
                     )
                 }.toMutableMap().apply {
-                    // Add Spotify if enabled
-                    if (dataSavers.spotify.isEnabled.value) {
-                        put("spotify", DeviceInfoForDataSaver("Spotify", setOf("track_info")))
+                    // Add media track if enabled
+                    if (dataSavers.mediaTrack.isEnabled.value) {
+                        put("mediaTrack", DeviceInfoForDataSaver("MediaTrack", setOf("track_info")))
                     }
                 }
 
