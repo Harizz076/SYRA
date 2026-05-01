@@ -16,6 +16,8 @@ import com.polar.sdk.api.errors.PolarInvalidArgument
 import com.polar.sdk.api.model.PolarDeviceInfo
 import com.polar.sdk.api.model.PolarHealthThermometerData
 import com.polar.sdk.api.model.PolarSensorSetting
+import com.wboelens.polarrecorder.managers.RecordingManager
+import com.wboelens.polarrecorder.utils.NotificationHelper
 import com.wboelens.polarrecorder.viewModels.ConnectionState
 import com.wboelens.polarrecorder.viewModels.DeviceViewModel
 import com.wboelens.polarrecorder.viewModels.LogViewModel
@@ -55,6 +57,12 @@ class PolarManager(
     private val logViewModel: LogViewModel,
     private val preferencesManager: PreferencesManager,
 ) {
+  // Injected post-construction to break circular dependency with RecordingManager
+  private var recordingManager: RecordingManager? = null
+
+  fun setRecordingManager(rm: RecordingManager) {
+    recordingManager = rm
+  }
   companion object {
     private const val TAG = "PolarManager"
     private const val SCAN_INTERVAL = 30000L // 30 seconds between scans
@@ -107,6 +115,8 @@ class PolarManager(
           }
 
           override fun deviceConnected(polarDeviceInfo: PolarDeviceInfo) {
+            // If the sensor reconnected, dismiss the disconnect warning
+            NotificationHelper.cancelSensorDisconnectedNotification(context)
             logViewModel.addLogMessage(
                 "Fetching capabilities for device ${polarDeviceInfo.deviceId}"
             )
@@ -180,6 +190,10 @@ class PolarManager(
               logViewModel.addLogMessage("Device ${polarDeviceInfo.deviceId} disconnected")
             } else {
               logViewModel.addLogError("Device ${polarDeviceInfo.deviceId} disconnected")
+              // Fire persistent notification if a recording is currently active
+              if (recordingManager?.isRecording?.value == true) {
+                NotificationHelper.showSensorDisconnectedNotification(context, polarDeviceInfo.deviceId)
+              }
             }
 
             deviceViewModel.updateConnectionState(

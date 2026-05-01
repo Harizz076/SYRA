@@ -39,6 +39,7 @@ import com.wboelens.polarrecorder.ui.components.SaveToOptions
 import com.wboelens.polarrecorder.utils.ZipUtils
 import com.wboelens.polarrecorder.viewModels.DeviceViewModel
 import com.wboelens.polarrecorder.viewModels.FileSystemSettingsViewModel
+import com.wboelens.polarrecorder.managers.PolarManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -50,7 +51,7 @@ fun RecordingSettingsScreen(
     fileSystemSettingsViewModel: FileSystemSettingsViewModel,
     dataSavers: DataSavers,
     preferencesManager: PreferencesManager,
-    polarManager: com.wboelens.polarrecorder.managers.PolarManager,
+    polarManager: PolarManager,
     onBackPressed: () -> Unit,
     onNavigateToDeviceSelection: () -> Unit = onBackPressed,
     onContinue: () -> Unit,
@@ -136,20 +137,59 @@ fun RecordingSettingsScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         CheckboxWithLabel(
-            label = "Enable auto-recording (monitors Spotify activity)",
+            label = "Enable auto-recording (monitors music playback)",
             checked = autoRecordingEnabled,
             fullWidth = true,
             onCheckedChange = {
               autoRecordingEnabled = it
               preferencesManager.autoRecordingEnabled = it
-              // Start or stop the Spotify monitor service based on the setting
+              
               if (it) {
-                com.wboelens.polarrecorder.services.SpotifyMonitorService.start(context)
+                // Check if Notification Access is granted
+                val manager = com.wboelens.polarrecorder.PolarRecorderApplication.mediaPlaybackManager
+                if (manager.isNotificationAccessGranted()) {
+                  manager.startListening()
+                } else {
+                  // Prompt user to grant Notification Access
+                  val intent = android.content.Intent(android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+                  context.startActivity(intent)
+                }
               } else {
-                com.wboelens.polarrecorder.services.SpotifyMonitorService.stop(context)
+                com.wboelens.polarrecorder.PolarRecorderApplication.mediaPlaybackManager.stopListening()
               }
             },
         )
+
+        if (autoRecordingEnabled) {
+          val hasAccess = com.wboelens.polarrecorder.PolarRecorderApplication
+              .mediaPlaybackManager.isNotificationAccessGranted()
+          if (!hasAccess) {
+            Spacer(modifier = Modifier.height(8.dp))
+            Button(
+                onClick = {
+                  val intent = android.content.Intent(android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+                  context.startActivity(intent)
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+              Text("Grant Notification Access")
+            }
+            Text(
+                text = "Required to detect music playback from any app.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(top = 4.dp)
+            )
+          } else {
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = "✓ Notification Access granted — monitoring all music apps",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary,
+            )
+          }
+          Spacer(modifier = Modifier.height(16.dp))
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 

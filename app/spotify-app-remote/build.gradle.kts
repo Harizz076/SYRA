@@ -1,3 +1,0 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file("spotify-app-remote-release-0.8.0.aar"))
-

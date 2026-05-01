@@ -32,10 +32,11 @@ class SurveyNotificationService : Service() {
         // For testing: 30 seconds (commented out)
         // private const val TEST_INTERVAL_MS = 30_000L
 
-        // For production: Random intervals between 2-6 hours
+        // For production: Random intervals between 2-4 hours (fits 3-5 probes in a ~10h day)
         private const val MIN_INTERVAL_HOURS = 2
-        private const val MAX_INTERVAL_HOURS = 6
+        private const val MAX_INTERVAL_HOURS = 4
         private const val MAX_DAILY_NOTIFICATIONS = 5
+        private const val RANDOM_PROBE_REQUEST_CODE = 3001
 
         fun start(context: Context) {
             val intent = Intent(context, SurveyNotificationService::class.java)
@@ -105,9 +106,21 @@ class SurveyNotificationService : Service() {
         }
 
         notificationCount++
+        Log.d(TAG, "Sending random ESM probe notification (#$notificationCount)")
 
-        // Notification removed - only logging the survey trigger
-        Log.d(TAG, "Survey notification triggered (#$notificationCount) - notification display disabled")
+        val intent = Intent(this, com.wboelens.polarrecorder.ui.screens.SurveyActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            putExtra("notification_type", "random")
+        }
+
+        val pendingIntent = android.app.PendingIntent.getActivity(
+            this,
+            RANDOM_PROBE_REQUEST_CODE,
+            intent,
+            android.app.PendingIntent.FLAG_UPDATE_CURRENT or android.app.PendingIntent.FLAG_IMMUTABLE
+        )
+
+        com.wboelens.polarrecorder.utils.NotificationHelper.showRandomProbeNotification(this, pendingIntent)
     }
 
     private fun createServiceNotification(): Notification {

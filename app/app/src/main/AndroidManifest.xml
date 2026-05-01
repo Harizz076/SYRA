@@ -2,10 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Allow app to query for Spotify app package -->
-    <queries>
-        <package android:name="com.spotify.music" />
-    </queries>
+
 
     <!-- Polar SDK needs Bluetooth scan permission to search for BLE devices. Polar BLE SDK doesn't use the scan
  to decide the location so "neverForLocation" permission flag can be used.-->
@@ -77,13 +74,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- Intent filter for Spotify redirect -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="com.wboelens.polarrecorder" android:host="callback" />
-            </intent-filter>
         </activity>
 
         <!-- Survey Activity -->
@@ -101,14 +91,17 @@
             android:exported="false"
             android:enabled="true" />
 
-        <!-- Spotify Broadcast Receiver -->
-        <receiver
-            android:name=".receivers.SpotifyBroadcastReceiver"
-            android:exported="true">
+        <!-- Media Playback Listener Service (NotificationListenerService) -->
+        <service
+            android:name=".services.MediaPlaybackListenerService"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
-                <action android:name="com.spotify.music.active" />
+                <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
-        </receiver>
+        </service>
+
+
 
         <!-- FileProvider for sharing zip files -->
         <provider

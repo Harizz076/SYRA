@@ -16,8 +16,10 @@ data class SurveyResponse(
     val energy: Int,
     val timestamp: Long = System.currentTimeMillis(),
     val notificationType: String, // "music_pre", "music_post", or "random"
-    val musicLiking: Int? = null, // Only for music_post
-    val musicFamiliarity: Int? = null // Only for music_post
+    val musicLiking: Int? = null,       // Only for music_post
+    val musicFamiliarity: Int? = null,  // Only for music_post
+    val goalDescription: String? = null, // Only for music_pre: what goal are you listening for?
+    val goalAchieved: Boolean? = null    // Only for music_post: was that goal achieved?
 )
 
 class SurveyManager(
@@ -60,7 +62,7 @@ class SurveyManager(
                 // Store temporarily - will be saved when recording stops
                 _pendingSurveyResponse.value = response
                 logViewModel.addLogMessage("Post-music survey response stored (pending recording stop)")
-                Log.d(TAG, "Stored post-music survey response: pleasantness=${response.pleasantness}, energy=${response.energy}, liking=${response.musicLiking}, familiarity=${response.musicFamiliarity}")
+                Log.d(TAG, "Stored post-music survey response: pleasantness=${response.pleasantness}, energy=${response.energy}, liking=${response.musicLiking}, familiarity=${response.musicFamiliarity}, goalAchieved=${response.goalAchieved}")
             }
             "random" -> {
                 // Create new folder name and store temporarily
@@ -174,9 +176,12 @@ class SurveyManager(
                 put("pleasantness", response.pleasantness)
                 put("energy", response.energy)
                 put("notification_type", response.notificationType)
-                // Add music_post specific fields if present
+                // music_post specific fields
                 response.musicLiking?.let { put("music_liking", it) }
                 response.musicFamiliarity?.let { put("music_familiarity", it) }
+                // goal relevance fields
+                response.goalDescription?.let { put("goal_description", it) }
+                response.goalAchieved?.let { put("goal_achieved", it) }
                 put("formatted_time", SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
                     .format(Date(response.timestamp)))
             }
