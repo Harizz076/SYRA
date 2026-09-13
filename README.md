@@ -19,42 +19,52 @@
 <p align="center">
   <a href="#getting-started">Get started</a> |
   <a href="#usage">Usage</a> |
-  <a href="#quality--privacy">Privacy</a>
+  <a href="#license">License</a> |
+  <a href="#contact">Contact</a>
 </p>
 
-<p align="center"><sub>A quick look at the app</sub></p>
+<h2 align="center">See SYRA in action</h2>
+
+<p align="center">
+  From setup and study configuration to music-triggered prompts and in-the-moment surveys.
+</p>
 
 <table align="center">
   <tr>
     <td align="center">
       <img src="docs/images/1.jpg" alt="SYRA home dashboard" width="150" /><br />
-      <sub>Home dashboard</sub>
+      <strong>Home</strong><br />
+      Check sensor status and start a session.
     </td>
     <td align="center">
       <img src="docs/images/2.jpg" alt="SYRA setup and export screen" width="150" /><br />
-      <sub>Setup and export</sub>
+      <strong>Setup</strong><br />
+      Configure recording and export settings.
     </td>
     <td align="center">
       <img src="docs/images/3.jpg" alt="SYRA questionnaire screen" width="150" /><br />
-      <sub>Questionnaire flow</sub>
+      <strong>Questionnaires</strong><br />
+      Complete structured study measures.
     </td>
   </tr>
   <tr>
     <td align="center">
       <img src="docs/images/4.jpg" alt="Music-triggered SYRA notification" width="150" /><br />
-      <sub>Music-triggered prompt</sub>
+      <strong>Music prompt</strong><br />
+      Receive a prompt when listening begins.
     </td>
     <td align="center">
       <img src="docs/images/5.jpg" alt="SYRA pre-music affect survey" width="150" /><br />
-      <sub>Pre-music affect survey</sub>
+      <strong>Momentary affect</strong><br />
+      Record how you feel before listening.
     </td>
     <td align="center">
       <img src="docs/images/6.jpg" alt="Music playback on an Android device" width="150" /><br />
-      <sub>Listening in context</sub>
+      <strong>Listening context</strong><br />
+      Capture music as it happens in daily life.
     </td>
   </tr>
 </table>
-
 
 ## Why SYRA?
 
@@ -79,14 +89,6 @@ flowchart LR
     class D session;
     linkStyle default stroke:#718397,stroke-width:2px;
 ```
-
-### Research questions it supports
-
-| Focus | Example question |
-| --- | --- |
-| **Naturalistic listening** | How do people respond to self-selected audio on their own devices? |
-| **Physiological response** | How do heart rate, motion, and compatible biosignals change during listening? |
-| **Emotion regulation** | How do affect and listening goals relate to music use in daily life? |
 
 ## Features
 
@@ -125,8 +127,6 @@ cd SYRA/app
 
 Alternatively, open the `app/` directory in Android Studio, allow Gradle to sync, and run the `debug` configuration on a connected device.
 
-
-
 ## Usage
 
 Choose the protocol that matches your study design:
@@ -154,8 +154,6 @@ session-export.zip
 └── LOG.jsonl          # Application diagnostic events
 ```
 
-
-
 ## Project structure
 
 ```text
@@ -171,18 +169,11 @@ SYRA/
 └── README.md
 ```
 
-## Snapshots
-
-
-
-
-
 ## License
 
-SYRA is released under the [MIT License](LICENSE).
-See [NOTICE](NOTICE) for third-party and upstream attribution information that must be retained in redistributions.
+SYRA is released under the [MIT License](LICENSE). See [NOTICE](NOTICE) for third-party and upstream attribution information that must be retained in redistributions.
 
-## Contact Information
+## Contact
 
 Have a question, an idea, or a bug to report? Open a [GitHub issue](https://github.com/Harizz076/SYRA/issues) or email [shaikh.jamal@research.iiit.ac.in](mailto:shaikh.jamal@research.iiit.ac.in).
 
