@@ -1,0 +1,22 @@
+{
+  "questionnaireId": "hums",
+  "title": "Healthy-Unhealthy Music Scale (HUMS)",
+  "description": "The following statements describe reasons why people listen to music. Please rate how often you listen to music for each of the following reasons.",
+  "version": "1.0.0",
+  "questions": [
+    {"id": "hums_1",  "text": "To feel connected to others.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_2",  "text": "To enhance a positive mood.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_3",  "text": "To release emotions.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_4",  "text": "To wallow in sadness.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_5",  "text": "To feel like someone understands me.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_6",  "text": "To feel better about myself.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_7",  "text": "To keep thinking about someone I'm missing.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_8",  "text": "To provoke or sustain negative emotions.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_9",  "text": "To have something to do.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_10", "text": "To help me work through my problems.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_11", "text": "To feel less alone.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_12", "text": "To remind me of sad things.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_13", "text": "To relive painful experiences.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}},
+    {"id": "hums_14", "text": "To help me dwell on things.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Never", "5": "Always"}}}
+  ]
+}

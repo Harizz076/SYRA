@@ -1,0 +1,43 @@
+{
+  "questionnaireId": "q_hsps",
+  "title": "Highly Sensitive Person Scale (HSPS)",
+  "description": "Please answer the following questions based on how you generally feel. (Shortened version for demonstration)",
+  "version": "1.0.0",
+  "estimatedMinutes": 5,
+  "triggerRule": null,
+  "questions": [
+    {
+      "id": "hsps_1",
+      "text": "Are you easily overwhelmed by strong sensory input?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 7,
+        "labels": { "1": "Not at all", "7": "Extremely" }
+      },
+      "isRequired": true
+    },
+    {
+      "id": "hsps_2",
+      "text": "Do you seem to be aware of subtleties in your environment?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 7,
+        "labels": { "1": "Not at all", "7": "Extremely" }
+      },
+      "isRequired": true
+    },
+    {
+      "id": "hsps_3",
+      "text": "Do other people's moods affect you?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 7,
+        "labels": { "1": "Not at all", "7": "Extremely" }
+      },
+      "isRequired": true
+    }
+  ]
+}

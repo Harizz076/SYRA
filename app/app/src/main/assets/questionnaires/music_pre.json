@@ -1,0 +1,28 @@
+{
+  "questionnaireId": "q_music_pre",
+  "title": "Pre-Music Survey",
+  "description": "Please complete this quick survey before you start listening.",
+  "version": "1.0.0",
+  "estimatedMinutes": 1,
+  "triggerRule": {
+    "type": "EVENT",
+    "value": "music_start"
+  },
+  "questions": [
+    {
+      "id": "q_affect",
+      "text": "How are you feeling right now? Please select a point on the grid.",
+      "type": "AFFECT_GRID",
+      "isRequired": true
+    },
+    {
+      "id": "q_goal",
+      "text": "What is your main intention or goal for listening to music right now?",
+      "type": "FREE_TEXT",
+      "validation": {
+        "maxLength": 200
+      },
+      "isRequired": false
+    }
+  ]
+}

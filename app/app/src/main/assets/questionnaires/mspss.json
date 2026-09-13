@@ -1,0 +1,20 @@
+{
+  "questionnaireId": "mspss",
+  "title": "Multidimensional Scale of Perceived Social Support (MSPSS)",
+  "description": "We are interested in how you feel about the following statements. Read each statement carefully. Indicate how much you agree or disagree with each statement.",
+  "version": "1.0.0",
+  "questions": [
+    {"id": "mspss_1",  "text": "There is a special person who is around when I am in need.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_2",  "text": "There is a special person with whom I can share my joys and sorrows.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_3",  "text": "My family really tries to help me.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_4",  "text": "I get the emotional help and support I need from my family.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_5",  "text": "I have a special person who is a real source of comfort to me.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_6",  "text": "My friends really try to help me.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_7",  "text": "I can count on my friends when things go wrong.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_8",  "text": "I can talk about my problems with my family.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_9",  "text": "I have friends with whom I can share my joys and sorrows.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_10", "text": "There is a special person in my life who cares about my feelings.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_11", "text": "My family is willing to help me make decisions.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}},
+    {"id": "mspss_12", "text": "I can talk about my problems with my friends.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Very Strongly Disagree", "7": "Very Strongly Agree"}}}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "questionnaireId": "erq",
+  "title": "Emotion Regulation Questionnaire (ERQ)",
+  "description": "We would like to ask you some questions about your emotional life, in particular, how you control (that is, regulate and manage) your emotions. Please answer each item by marking the appropriate number on the scale.",
+  "version": "1.0.0",
+  "questions": [
+    {"id": "erq_1",  "text": "When I want to feel more positive (e.g., more joy or amusement), I change what I'm thinking about.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_2",  "text": "I keep my emotions to myself.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_3",  "text": "When I want to feel less negative (e.g., less sadness or anger), I change what I'm thinking about.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_4",  "text": "When I am feeling positive emotions, I am careful not to express them.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_5",  "text": "When I'm faced with a stressful situation, I make myself think about it in a way that helps me stay calm.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_6",  "text": "I control my emotions by not expressing them.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_7",  "text": "When I want to feel more positive, I change the way I'm thinking about the situation.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_8",  "text": "I control my emotions by changing the way I think about the situation I'm in.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_9",  "text": "When I am feeling negative emotions, I make sure not to express them.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "erq_10", "text": "When I want to feel less negative, I change the way I'm thinking about the situation.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}}
+  ]
+}

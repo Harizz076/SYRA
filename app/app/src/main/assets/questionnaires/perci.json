@@ -1,0 +1,32 @@
+{
+  "questionnaireId": "q_perci",
+  "title": "Perceived Empathy and Responsiveness Scale (PERCI)",
+  "description": "Please answer the following questions.",
+  "version": "1.0.0",
+  "estimatedMinutes": 3,
+  "triggerRule": null,
+  "questions": [
+    {
+      "id": "perci_1",
+      "text": "How well do others understand your feelings?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Not at all", "5": "Very well" }
+      },
+      "isRequired": true
+    },
+    {
+      "id": "perci_2",
+      "text": "Do others validate your experiences?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Never", "5": "Always" }
+      },
+      "isRequired": true
+    }
+  ]
+}

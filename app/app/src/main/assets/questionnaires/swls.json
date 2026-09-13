@@ -1,0 +1,13 @@
+{
+  "questionnaireId": "swls",
+  "title": "Satisfaction with Life Scale (SWLS)",
+  "description": "Below are five statements with which you may agree or disagree. Using the scale below, indicate your agreement with each item by placing the appropriate number on the line.",
+  "version": "1.0.0",
+  "questions": [
+    {"id": "swls_1", "text": "In most ways my life is close to my ideal.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "swls_2", "text": "The conditions of my life are excellent.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "swls_3", "text": "I am satisfied with my life.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "swls_4", "text": "So far I have gotten the important things I want in life.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}},
+    {"id": "swls_5", "text": "If I could live my life over, I would change almost nothing.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 7, "labels": {"1": "Strongly Disagree", "7": "Strongly Agree"}}}
+  ]
+}

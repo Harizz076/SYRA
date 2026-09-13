@@ -1,0 +1,48 @@
+{
+  "questionnaireId": "q_music_post",
+  "title": "Post-Music Survey",
+  "description": "Please complete this quick survey now that your listening session has ended.",
+  "version": "1.0.0",
+  "estimatedMinutes": 1,
+  "triggerRule": {
+    "type": "EVENT",
+    "value": "music_stop"
+  },
+  "questions": [
+    {
+      "id": "q_affect",
+      "text": "How are you feeling right now? Please select a point on the grid.",
+      "type": "AFFECT_GRID",
+      "isRequired": true
+    },
+    {
+      "id": "q_goal_achieved",
+      "text": "Did you achieve the main intention or goal you had for listening to music?",
+      "type": "SINGLE_CHOICE",
+      "options": ["Yes", "Somewhat", "No", "N/A"],
+      "isRequired": true
+    },
+    {
+      "id": "q_liking",
+      "text": "How much did you like the music you just listened to?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Not at all", "5": "Very much" }
+      },
+      "isRequired": true
+    },
+    {
+      "id": "q_familiarity",
+      "text": "How familiar were you with the music you just listened to?",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Never heard it", "5": "Know it very well" }
+      },
+      "isRequired": true
+    }
+  ]
+}

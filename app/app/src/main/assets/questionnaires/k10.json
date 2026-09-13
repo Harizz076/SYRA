@@ -1,0 +1,18 @@
+{
+  "questionnaireId": "k10",
+  "title": "Kessler Psychological Distress Scale (K10)",
+  "description": "The following questions ask about how you have been feeling over the past 4 weeks. For each question, please circle the number that best describes how often you had this feeling.",
+  "version": "1.0.0",
+  "questions": [
+    {"id": "k10_1", "text": "In the past 4 weeks, about how often did you feel tired out for no good reason?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_2", "text": "In the past 4 weeks, about how often did you feel nervous?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_3", "text": "In the past 4 weeks, about how often did you feel so nervous that nothing could calm you down?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_4", "text": "In the past 4 weeks, about how often did you feel hopeless?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_5", "text": "In the past 4 weeks, about how often did you feel restless or fidgety?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_6", "text": "In the past 4 weeks, about how often did you feel so restless you could not sit still?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_7", "text": "In the past 4 weeks, about how often did you feel depressed?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_8", "text": "In the past 4 weeks, about how often did you feel that everything was an effort?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_9", "text": "In the past 4 weeks, about how often did you feel so sad that nothing could cheer you up?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}},
+    {"id": "k10_10", "text": "In the past 4 weeks, about how often did you feel worthless?", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "None of the time", "5": "All of the time"}}}
+  ]
+}

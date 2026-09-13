@@ -1,0 +1,32 @@
+{
+  "questionnaireId": "q_trait_empathy",
+  "title": "Trait Empathy Scale",
+  "description": "Please rate the following statements.",
+  "version": "1.0.0",
+  "estimatedMinutes": 5,
+  "triggerRule": null,
+  "questions": [
+    {
+      "id": "te_1",
+      "text": "I can easily tell if someone else is interested or bored with what I am saying.",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Strongly Disagree", "5": "Strongly Agree" }
+      },
+      "isRequired": true
+    },
+    {
+      "id": "te_2",
+      "text": "I find it easy to put myself in somebody else's shoes.",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Strongly Disagree", "5": "Strongly Agree" }
+      },
+      "isRequired": true
+    }
+  ]
+}

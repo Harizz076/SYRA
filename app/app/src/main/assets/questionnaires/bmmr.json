@@ -1,0 +1,29 @@
+{
+  "questionnaireId": "bmmr",
+  "title": "Brief Music in Mood Regulation (BMMR)",
+  "description": "The following statements describe different ways people use music to manage their feelings and moods. Please indicate how much you agree or disagree with each statement.",
+  "version": "1.0.0",
+  "questions": [
+    {"id": "bmmr_1",  "text": "I usually put background music on to make the atmosphere more pleasant.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_2",  "text": "I like to use music to bring to mind good experiences from the past.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_3",  "text": "I use music to help boost my own confidence.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_4",  "text": "I use music to create the right mood for social occasions.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_5",  "text": "Music is important to me as a means of self-expression.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_6",  "text": "I often have music playing in the background even when I am doing other things.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_7",  "text": "I use music to feel connected with people who are important to me.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_8",  "text": "I often listen to music to escape from things that are bothering me.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_9",  "text": "I use music to help me to relax.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_10", "text": "For me, music is a way to forget about my worries.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_11", "text": "When stressful thoughts keep going around in my head, I start to listen to music to get them off my mind.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_12", "text": "When I feel bad, I try to get myself in a better mood by engaging in some nice music-related activity.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_13", "text": "When I'm really angry, I feel like listening to some angry music.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_14", "text": "When everything feels bad, it helps me to listen to music that expresses my bad feelings.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_15", "text": "When I'm angry with someone, I listen to music that expresses my anger.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_16", "text": "Music helps me to understand different feelings in myself.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_17", "text": "I use music to work through difficult feelings.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_18", "text": "I use music to help me understand how I am feeling.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_19", "text": "I use music to explore my feelings.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_20", "text": "Listening to music helps me to find answers to problems.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}},
+    {"id": "bmmr_21", "text": "I use music to search for meaning in life.", "type": "SCALE", "isRequired": true, "validation": {"min": 1, "max": 5, "labels": {"1": "Strongly Disagree", "5": "Strongly Agree"}}}
+  ]
+}

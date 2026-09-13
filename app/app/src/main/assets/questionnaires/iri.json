@@ -1,0 +1,32 @@
+{
+  "questionnaireId": "q_iri",
+  "title": "Interpersonal Reactivity Index (IRI)",
+  "description": "Please read each statement and indicate how well it describes you.",
+  "version": "1.0.0",
+  "estimatedMinutes": 5,
+  "triggerRule": null,
+  "questions": [
+    {
+      "id": "iri_1",
+      "text": "I often have tender, concerned feelings for people less fortunate than me.",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Does not describe me well", "5": "Describes me very well" }
+      },
+      "isRequired": true
+    },
+    {
+      "id": "iri_2",
+      "text": "I sometimes try to understand my friends better by imagining how things look from their perspective.",
+      "type": "SCALE",
+      "validation": {
+        "min": 1,
+        "max": 5,
+        "labels": { "1": "Does not describe me well", "5": "Describes me very well" }
+      },
+      "isRequired": true
+    }
+  ]
+}

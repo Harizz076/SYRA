@@ -1,0 +1,25 @@
+# Android and IDE outputs
+.gradle/
+**/build/
+*.iml
+.idea/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local diagnostics and device logs — do not publish research/device data
+*.log
+logcat*.txt
+build_output.log
+
+# Local virtual environments and Python caches
+.venv/
+__pycache__/
+*.py[cod]
+
+# Exported chat history and planning artifacts
+Debugging and Extending ESM Prompts.md
+*walkthrough*.md
+*implementation_plan*.md
+*claude*prompt*.md

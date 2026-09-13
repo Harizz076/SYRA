@@ -1,0 +1,29 @@
+{
+  "questionnaireId": "q_daily_mood_01",
+  "description": "This brief check-in helps us understand your state at this moment. All responses are stored locally and will never be shared.",
+  "title": "Random Check-in Survey",
+  "version": "1.1.0",
+  "estimatedMinutes": 1,
+  "triggerRule": {
+    "type": "INTERVAL",
+    "value": "24h"
+  },
+  "questions": [
+    {
+      "id": "q_affect",
+      "text": "How are you feeling right now? Please select a point on the grid.",
+      "type": "AFFECT_GRID",
+      "isRequired": true
+    },
+    {
+      "id": "q_listening_music",
+      "text": "Are you listening to any music right now?",
+      "type": "SINGLE_CHOICE",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "isRequired": true
+    }
+  ]
+}
