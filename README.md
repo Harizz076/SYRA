@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Signal-based Yield for Responses to Audio</strong><br />
-  An Android research app for studying music, affect, and physiology in everyday life.
+  A research tool for understanding how people respond to audio in everyday life.
 </p>
 
 <p align="center">
@@ -17,19 +17,19 @@
 </p>
 
 <p align="center">
-  <a href="#getting-started">Get started</a> ·
-  <a href="#usage">Usage</a> ·
+  <a href="#getting-started">Get started</a> |
+  <a href="#usage">Usage</a> |
   <a href="#quality--privacy">Privacy</a>
 </p>
 
 > [!IMPORTANT]
-> SYRA is a research prototype—not a medical device—and is not intended to diagnose, treat, or monitor a health condition.
+> SYRA is a research prototype and is not intended to diagnose, treat, or monitor a health condition.
 
 ## Why SYRA?
 
-Music-and-emotion studies are often conducted with short, researcher-selected excerpts in controlled labs. That control is valuable, but it can miss the settings in which people actually choose music, experience it, and use it to regulate emotion.
+Music-and-emotion studies often use short, researcher-selected excerpts in controlled labs. That gives researchers useful control, but it can leave out the everyday moments when people choose music, live with it, and use it to shape how they feel.
 
-SYRA closes that gap with local-first data collection in participants’ everyday environments. It captures momentary self-report, audio-listening context, and optional wearable data in a single exportable research session.
+SYRA is built for those everyday moments. It keeps data collection on the participant's device and brings momentary self-report, listening context, and optional wearable data together in one exportable session.
 
 ```mermaid
 flowchart LR
@@ -50,12 +50,12 @@ flowchart LR
 
 | Capability | What SYRA provides |
 | --- | --- |
-| **Wearable integration** | Polar BLE support for heart rate, ECG, accelerometer, and compatible PPG streams. |
-| **Music context** | Playback and metadata monitoring from an allowlist of dedicated music apps via Android `MediaSessionManager`. |
-| **EMA protocols** | Pre-listening, post-listening, and scheduled random questionnaires, including valence–arousal reporting. |
-| **Study modes** | Music-triggered, random ESM, and physiology-focused protocols. |
-| **Local-first storage** | JSONL session data, encrypted local study metadata, and ZIP export. |
-| **Background resilience** | Foreground sensor collection and alarm-based ESM prompts for supported Android background scenarios. |
+| **Wearable integration** | Records heart rate, ECG, accelerometer, and compatible PPG streams from Polar BLE devices. |
+| **Music context** | Watches playback and metadata from supported music apps through Android `MediaSessionManager`. |
+| **EMA protocols** | Runs pre-listening, post-listening, and scheduled random questionnaires, including valence-arousal reporting. |
+| **Study modes** | Supports music-triggered, random ESM, and physiology-focused protocols. |
+| **Local-first storage** | Saves JSONL session data and encrypted study metadata locally, then exports a ZIP when you are ready. |
+| **Background collection** | Uses a foreground sensor service and alarm-based prompts where Android permits background operation. |
 
 ## Built with
 
@@ -109,7 +109,7 @@ Choose the protocol that matches your study design:
 | **Random ESM** | Sends scheduled affect prompts without media monitoring. | No |
 | **Physiology** | Records supported streams from a connected Polar sensor. | Yes |
 
-For a music-triggered session, select a mode, begin listening in a supported app, complete the pre-session prompt, and listen normally. When playback ends, complete the post-session prompt and export the completed session from the app settings.
+For a music-triggered session, choose a mode, start listening in a supported app, answer the pre-session prompt, and listen normally. When playback ends, answer the post-session prompt and export the session from the app settings.
 
 ### Export format
 
@@ -144,7 +144,7 @@ SYRA/
 
 ## Quality & privacy
 
-- SYRA is local-first and does not declare the Android `INTERNET` permission.
+- SYRA is local-first. It does not declare the Android `INTERNET` permission.
 - Run unit tests from `app/` with `./gradlew testDebugUnitTest`.
 - Run static analysis from `app/` with `./gradlew detekt`.
 - Device logs, pilot-session reports, and other research diagnostics are intentionally excluded from version control.
@@ -155,7 +155,7 @@ SYRA is released under the [MIT License](LICENSE). See [NOTICE](NOTICE) for thir
 
 ## Contact
 
-Questions, collaboration ideas, or bug reports are welcome through [GitHub Issues](https://github.com/Harizz076/SYRA/issues) or at [shaikh.jamal@research.iiit.ac.in](mailto:shaikh.jamal@research.iiit.ac.in).
+Have a question, an idea, or a bug to report? Open a [GitHub issue](https://github.com/Harizz076/SYRA/issues) or email [shaikh.jamal@research.iiit.ac.in](mailto:shaikh.jamal@research.iiit.ac.in).
 
 ## Acknowledgements
 
