@@ -22,8 +22,39 @@
   <a href="#quality--privacy">Privacy</a>
 </p>
 
-> [!IMPORTANT]
-> SYRA is a research prototype and is not intended to diagnose, treat, or monitor a health condition.
+<p align="center"><sub>A quick look at the app</sub></p>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="docs/images/1.jpg" alt="SYRA home dashboard" width="150" /><br />
+      <sub>Home dashboard</sub>
+    </td>
+    <td align="center">
+      <img src="docs/images/2.jpg" alt="SYRA setup and export screen" width="150" /><br />
+      <sub>Setup and export</sub>
+    </td>
+    <td align="center">
+      <img src="docs/images/3.jpg" alt="SYRA questionnaire screen" width="150" /><br />
+      <sub>Questionnaire flow</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/images/4.jpg" alt="Music-triggered SYRA notification" width="150" /><br />
+      <sub>Music-triggered prompt</sub>
+    </td>
+    <td align="center">
+      <img src="docs/images/5.jpg" alt="SYRA pre-music affect survey" width="150" /><br />
+      <sub>Pre-music affect survey</sub>
+    </td>
+    <td align="center">
+      <img src="docs/images/6.jpg" alt="Music playback on an Android device" width="150" /><br />
+      <sub>Listening in context</sub>
+    </td>
+  </tr>
+</table>
+
 
 ## Why SYRA?
 
@@ -33,9 +64,20 @@ SYRA is built for those everyday moments. It keeps data collection on the partic
 
 ```mermaid
 flowchart LR
-    A["🎧 Listening context\nPlayback state & metadata"] --> D["SYRA session\nLocal JSONL export"]
-    B["🙂 Momentary affect\nEMA questionnaires"] --> D
-    C["❤️ Physiology\nOptional Polar BLE sensor"] --> D
+    A["Listening context<br/>Playback state and metadata"] --> D["SYRA session<br/>Local JSONL export"]
+    B["Momentary affect<br/>EMA questionnaires"] --> D
+    C["Physiology<br/>Optional Polar BLE sensor"] --> D
+
+    classDef listening fill:#DCE8F2,stroke:#4A6585,color:#1E2E40,stroke-width:2px;
+    classDef affect fill:#F5E7C6,stroke:#C76B00,color:#3A2A0A,stroke-width:2px;
+    classDef physiology fill:#DDEDE4,stroke:#2E6E4E,color:#173D2B,stroke-width:2px;
+    classDef session fill:#2F4865,stroke:#1E3048,color:#FFFFFF,stroke-width:3px;
+
+    class A listening;
+    class B affect;
+    class C physiology;
+    class D session;
+    linkStyle default stroke:#718397,stroke-width:2px;
 ```
 
 ### Research questions it supports
@@ -61,13 +103,6 @@ flowchart LR
 
 `Kotlin` · `Jetpack Compose` · `Coroutines` · `Room + SQLCipher` · `Polar BLE SDK` · `Android MediaSession` · `AlarmManager`
 
-| Requirement | Supported configuration |
-| --- | --- |
-| Android version | Android 7.0+ (API 24) |
-| Compile / target SDK | Android SDK 35 |
-| JVM target | Java 11 |
-| Wearables | Polar H10, OH1+, Verity Sense, and compatible devices |
-
 ## Getting started
 
 ### Prerequisites
@@ -90,13 +125,7 @@ cd SYRA/app
 
 Alternatively, open the `app/` directory in Android Studio, allow Gradle to sync, and run the `debug` configuration on a connected device.
 
-### First-run checklist
 
-1. Enter a participant identifier and choose a study mode.
-2. Select a local storage location for session exports.
-3. Grant Bluetooth and notification permissions when prompted.
-4. For music-triggered modes, enable **Notification Access** for SYRA in Android Settings.
-5. If prompted, exempt SYRA from battery optimisation to reduce OEM background restrictions.
 
 ## Usage
 
@@ -125,8 +154,7 @@ session-export.zip
 └── LOG.jsonl          # Application diagnostic events
 ```
 
-> [!CAUTION]
-> Exports can contain sensitive physiological and self-report data. Handle them only under an ethics-approved protocol and your institution’s data-governance requirements.
+
 
 ## Project structure
 
@@ -137,23 +165,24 @@ SYRA/
 │       ├── java/                  # App, services, managers, UI, and persistence
 │       ├── assets/questionnaires/ # JSON-defined questionnaires
 │       └── res/                   # Android resources
+├── docs/images/                   # Screenshots used by this README
 ├── LICENSE
 ├── NOTICE                          # Required third-party attribution
 └── README.md
 ```
 
-## Quality & privacy
+## Snapshots
 
-- SYRA is local-first. It does not declare the Android `INTERNET` permission.
-- Run unit tests from `app/` with `./gradlew testDebugUnitTest`.
-- Run static analysis from `app/` with `./gradlew detekt`.
-- Device logs, pilot-session reports, and other research diagnostics are intentionally excluded from version control.
+
+
+
 
 ## License
 
-SYRA is released under the [MIT License](LICENSE). See [NOTICE](NOTICE) for third-party and upstream attribution information that must be retained in redistributions.
+SYRA is released under the [MIT License](LICENSE).
+See [NOTICE](NOTICE) for third-party and upstream attribution information that must be retained in redistributions.
 
-## Contact
+## Contact Information
 
 Have a question, an idea, or a bug to report? Open a [GitHub issue](https://github.com/Harizz076/SYRA/issues) or email [shaikh.jamal@research.iiit.ac.in](mailto:shaikh.jamal@research.iiit.ac.in).
 
